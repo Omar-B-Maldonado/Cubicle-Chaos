@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8f35yelrpbuy"]
+
+[ext_resource type="PackedScene" uid="uid://di2h0c7y4sp2" path="res://Scenes/phone.tscn" id="1_jqgf3"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Phone" parent="." instance=ExtResource("1_jqgf3")]
+position = Vector2(306, 107)
+
+[node name="Camera2D" type="Camera2D" parent="."]
