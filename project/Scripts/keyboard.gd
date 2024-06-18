@@ -2,9 +2,12 @@ extends Node2D
 
 # Dictionary to map key names to their corresponding game object nodes
 var key_to_object = {}
-
+var originalColor 
+var pressedColor
 # This function is called when the node enters the scene tree for the first time
 func _ready():
+	originalColor = $KeyA.modulate
+	pressedColor = Color.DIM_GRAY
 	# Initialize the key-to-object mapping
 	key_to_object = {
 		KEY_A: $KeyA, KEY_B: $KeyB, KEY_C: $KeyC, KEY_D: $KeyD,
@@ -13,30 +16,24 @@ func _ready():
 		KEY_M: $KeyM, KEY_N: $KeyN, KEY_O: $KeyO, KEY_P: $KeyP,
 		KEY_Q: $KeyQ, KEY_R: $KeyR, KEY_S: $KeyS, KEY_T: $KeyT,
 		KEY_U: $KeyU, KEY_V: $KeyV, KEY_W: $KeyW, KEY_X: $KeyX,
-		KEY_Y: $KeyY, KEY_Z: $KeyZ,
+		KEY_Y: $KeyY, KEY_Z: $KeyZ, KEY_MINUS: $KeyMinus, KEY_PERIOD: $KeyPeriod,
+		KEY_SPACE: $KeySpace, KEY_ENTER: $KeyEnter, KEY_QUOTELEFT: $KeyAt,
+		KEY_0: $Key0, KEY_1: $Key1, KEY_2: $Key2, KEY_3: $Key3 , KEY_4: $Key4,
+		KEY_5: $Key5, KEY_6: $Key6, KEY_7: $Key7, KEY_8: $Key8 , KEY_9: $Key9,
+		KEY_BACKSPACE: $KeyBackspace, KEY_SHIFT: $KeyShift
 		# Add more mappings as needed
 	}
 	
 	# Ensure the node is set to receive input events
 	set_process_input(true)
 
-# This function processes input events
 func _input(event):
-	# Check if the event is a key press
-	if event is InputEventKey and event.pressed:
-		# Get the key code
-		var key_code = event.keycode
-
-		# Check if the key code exists in the key_to_object dictionary
-		if key_to_object.has(key_code):
-			# Get the corresponding game object node
-			var key_object = key_to_object[key_code]
+	if event is InputEventKey and key_to_object.has(event.keycode):		
+		var key_object = key_to_object[event.keycode]
+		
+		if event.pressed:
+			print("Key pressed: ", event.keycode, ". Node name: ", key_object.name)
+			key_object.modulate = pressedColor
 			
-			# Perform an action on the key object
-			_on_key_pressed(key_object, key_code)
-
-func _on_key_pressed(key_object, key_code):
-	print("Key pressed: ", key_code, ". Node name: ", key_object.name)
-	
-	# Change the color of the key object to red just to visually verify key presses
-	key_object.modulate = Color(1, 0, 0, 1)
+		if event.is_released():
+			key_object.modulate = originalColor

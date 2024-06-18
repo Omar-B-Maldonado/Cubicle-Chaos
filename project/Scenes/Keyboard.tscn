@@ -133,11 +133,11 @@ texture = ExtResource("11_hfmk7")
 position = Vector2(551, 119)
 texture = ExtResource("12_kdcke")
 
-[node name="KeyDash" type="Sprite2D" parent="."]
+[node name="KeyMinus" type="Sprite2D" parent="."]
 position = Vector2(589, 119)
 texture = ExtResource("13_ovmm2")
 
-[node name="KeyMinus" type="Sprite2D" parent="."]
+[node name="KeyPlus" type="Sprite2D" parent="."]
 position = Vector2(627, 119)
 texture = ExtResource("14_5k1bq")
 
@@ -250,11 +250,11 @@ position = Vector2(602, 194)
 texture = ExtResource("41_17dhd")
 
 [node name="KeyAt" type="Sprite2D" parent="."]
-position = Vector2(549, 229)
+position = Vector2(170, 119)
 texture = ExtResource("42_woueg")
 
 [node name="Key41" type="Sprite2D" parent="."]
-position = Vector2(163, 117)
+position = Vector2(628, 229)
 texture = ExtResource("43_y1odo")
 
 [node name="Key42" type="Sprite2D" parent="."]
@@ -262,11 +262,11 @@ position = Vector2(614, 159)
 texture = ExtResource("44_ivk86")
 
 [node name="Key43" type="Sprite2D" parent="."]
-position = Vector2(588, 229)
+position = Vector2(550, 229)
 texture = ExtResource("45_qrjda")
 
-[node name="Key44" type="Sprite2D" parent="."]
-position = Vector2(627, 229)
+[node name="KeyPeriod" type="Sprite2D" parent="."]
+position = Vector2(589, 229)
 texture = ExtResource("46_ekwj2")
 
 [node name="Key45" type="Sprite2D" parent="."]
@@ -401,22 +401,6 @@ texture = ExtResource("86_qb2hf")
 position = Vector2(696, 229)
 texture = ExtResource("87_1mpq5")
 
-[node name="Key97" type="Sprite2D" parent="."]
-position = Vector2(207, 229)
-texture = ExtResource("86_qb2hf")
-
-[node name="Key98" type="Sprite2D" parent="."]
-position = Vector2(239, 229)
-texture = ExtResource("87_1mpq5")
-
-[node name="Key86" type="Sprite2D" parent="."]
-position = Vector2(665, 119)
-texture = ExtResource("88_c2ivo")
-
-[node name="Key87" type="Sprite2D" parent="."]
-position = Vector2(697, 119)
-texture = ExtResource("89_07y0o")
-
 [node name="Key88" type="Sprite2D" parent="."]
 position = Vector2(169, 159)
 texture = ExtResource("90_sd87c")
@@ -483,3 +467,23 @@ texture = ExtResource("84_688av")
 [node name="Key83" type="Sprite2D" parent="KeySpace"]
 position = Vector2(381, 177)
 texture = ExtResource("85_w8cmt")
+
+[node name="KeyBackspace" type="Node2D" parent="."]
+
+[node name="Key86" type="Sprite2D" parent="KeyBackspace"]
+position = Vector2(665, 119)
+texture = ExtResource("88_c2ivo")
+
+[node name="Key87" type="Sprite2D" parent="KeyBackspace"]
+position = Vector2(697, 119)
+texture = ExtResource("89_07y0o")
+
+[node name="KeyShift" type="Node2D" parent="."]
+
+[node name="Key97" type="Sprite2D" parent="KeyShift"]
+position = Vector2(207, 229)
+texture = ExtResource("86_qb2hf")
+
+[node name="Key98" type="Sprite2D" parent="KeyShift"]
+position = Vector2(239, 229)
+texture = ExtResource("87_1mpq5")
