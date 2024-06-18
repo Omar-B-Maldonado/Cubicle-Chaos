@@ -1,37 +1,61 @@
 extends Node2D
 
+#audio
+@onready var ringing = $Ringing
+@onready var pick_up = $PickUp
+@onready var hang_up = $HangUp
+@onready var voice = $Voice
+
+
+@onready var game_manager = %GameManager
 @onready var timer   = $Timer
 const GIBBERISH_PATH = "res://gibberish.txt"
 var lines_of_text    = []
 var answers          = []
+var is_ringing       = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_txt_file(GIBBERISH_PATH)
-	timer.start() #looping timer starts
+	timer.start()
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		print("Phone clicked!")
+		if not is_ringing:
+			hang_up.play()
+		elif is_ringing:
+			pick_up.play()
+			ringing.stop()
+			is_ringing = false
+			
+			var line = get_random_line()
+			var words = line.split(' ') #separate the line into words
+			answers.clear()
+
+			#add the emails, names, or phone numbers to the set of answers
+			for i in range(len(words)):
+				var word = words[i]
+				if ends_with_punct(word):
+					word = cut_off_end_punct(word)
+				elif is_upper(word) and i+1 < len(words):
+					#check if the next word is uppercase. if so, add both to answers as a name
+					var next_word = words[i+1]
+					if is_upper(next_word):
+						if ends_with_punct(next_word):
+							next_word = cut_off_end_punct(next_word)
+						answers.append(word + " " + next_word) #FirstName LastName
+				
+				#adds emails and phone numbers to the list of answers
+				if word.contains('@') or word.contains('-'):
+					answers.append(word)
+			
+			await get_tree().create_timer(1).timeout
+			game_manager.set_subtitle(line)
 
 func _on_timer_timeout():
-	var line = get_random_line() #random gibberish line is gotten when the timer runs out
-	print(line)
-	var words = line.split(' ') #separate the line into words
-	#check if the words are emails, names, or phone numbers
-	#add the email, name, or phone number to the answers
-	for i in range(len(words)):
-		var word = words[i]
-		if ends_with_punct(word):
-			word = cut_off_end_punct(word)
-		elif is_upper(word) and i+1 < len(words):
-			#check if the next word is uppercase. if so, add both to answers as a name
-			var next_word = words[i+1]
-			if is_upper(next_word):
-				if ends_with_punct(next_word):
-					next_word = cut_off_end_punct(next_word)
-				answers.append(word + " " + next_word) #FirstName LastName
-		
-		#adds emails and phone numbers to the list of answers
-		if word.contains('@') or word.contains('-'):
-			answers.append(word)
-	print(answers)
+	is_ringing = true
+	ringing.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -49,7 +73,7 @@ func cut_off_end_punct(string):
 func get_random_line() -> String:
 	var random_index = randf_range(0, lines_of_text.size()) as int
 	return lines_of_text[random_index]
-	
+
 func load_txt_file(path: String) -> void:
 	if FileAccess.file_exists(path):
 		var file = FileAccess.open(path, FileAccess.READ)
