@@ -1,0 +1,485 @@
+[gd_scene load_steps=89 format=3 uid="uid://b3p2q38xa7su3"]
+
+[ext_resource type="Texture2D" uid="uid://b3svktp5tdyv" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="1_vjvex"]
+[ext_resource type="Script" path="res://Scripts/keyboard.gd" id="2_3in2y"]
+[ext_resource type="Texture2D" uid="uid://dwf0qioih4sjp" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_90.png" id="2_dlf0v"]
+[ext_resource type="Texture2D" uid="uid://cxi3qhqio7rc5" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_91.png" id="3_d0md3"]
+[ext_resource type="Texture2D" uid="uid://cyx4pu6r4xii3" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="4_6kobh"]
+[ext_resource type="Texture2D" uid="uid://bamef5olv71q0" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_3.png" id="5_xhjxr"]
+[ext_resource type="Texture2D" uid="uid://3ha247ox7lbs" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_4.png" id="6_m4a5b"]
+[ext_resource type="Texture2D" uid="uid://ciuf3onmtkbyi" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_5.png" id="7_vnk5l"]
+[ext_resource type="Texture2D" uid="uid://bc2pvld8e38bi" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_6.png" id="8_imoit"]
+[ext_resource type="Texture2D" uid="uid://ds41r5fydea6k" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_7.png" id="9_qsw37"]
+[ext_resource type="Texture2D" uid="uid://j8hujqasdhie" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_8.png" id="10_db4x8"]
+[ext_resource type="Texture2D" uid="uid://d3gim0hxv1qhe" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_9.png" id="11_hfmk7"]
+[ext_resource type="Texture2D" uid="uid://cm4ts23u3s5an" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_10.png" id="12_kdcke"]
+[ext_resource type="Texture2D" uid="uid://47hwb4srbs3" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_11.png" id="13_ovmm2"]
+[ext_resource type="Texture2D" uid="uid://bt62ciy7e4ekn" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_12.png" id="14_5k1bq"]
+[ext_resource type="Texture2D" uid="uid://wbx8hmct2brl" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_13.png" id="15_vn408"]
+[ext_resource type="Texture2D" uid="uid://b51bpa6al4ml" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_14.png" id="16_rsnrm"]
+[ext_resource type="Texture2D" uid="uid://odbtam2m2twx" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_15.png" id="17_jelid"]
+[ext_resource type="Texture2D" uid="uid://bjktanj38jyvf" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_16.png" id="18_g6mgg"]
+[ext_resource type="Texture2D" uid="uid://b6mjvolnloj56" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_17.png" id="19_fo0r5"]
+[ext_resource type="Texture2D" uid="uid://5sogs5kc1ieq" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_18.png" id="20_h23i3"]
+[ext_resource type="Texture2D" uid="uid://cccoxtartyx4u" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_19.png" id="21_6yl73"]
+[ext_resource type="Texture2D" uid="uid://c3nlbjed3ddim" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_20.png" id="22_2fhre"]
+[ext_resource type="Texture2D" uid="uid://b2symt2s8jufd" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_21.png" id="23_itqow"]
+[ext_resource type="Texture2D" uid="uid://b47k651fy17ba" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_22.png" id="24_0iwgc"]
+[ext_resource type="Texture2D" uid="uid://chc6s21qgdaid" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_23.png" id="25_h4ggu"]
+[ext_resource type="Texture2D" uid="uid://px0komb2cx76" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_24.png" id="26_vhvrr"]
+[ext_resource type="Texture2D" uid="uid://dpoq6n5p3yrym" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_25.png" id="27_uwp4i"]
+[ext_resource type="Texture2D" uid="uid://cgicb4d2lyb5e" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_26.png" id="28_manae"]
+[ext_resource type="Texture2D" uid="uid://wkk6ubbxup7n" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_27.png" id="29_ia5md"]
+[ext_resource type="Texture2D" uid="uid://bpoynffl6ll0n" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_28.png" id="30_oob5i"]
+[ext_resource type="Texture2D" uid="uid://cv665fqclllmb" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_29.png" id="31_dly1v"]
+[ext_resource type="Texture2D" uid="uid://c34gvpnlhr87r" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_30.png" id="32_wxhl3"]
+[ext_resource type="Texture2D" uid="uid://cukv7knl4di4n" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_31.png" id="33_25xa3"]
+[ext_resource type="Texture2D" uid="uid://ciadgktd4ujfp" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_32.png" id="34_mi8dt"]
+[ext_resource type="Texture2D" uid="uid://bnd3psjtcj5sf" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_33.png" id="35_dql8p"]
+[ext_resource type="Texture2D" uid="uid://1pt5mg03vx34" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_34.png" id="36_jrif7"]
+[ext_resource type="Texture2D" uid="uid://dktq4yd7306w1" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_35.png" id="37_hyq54"]
+[ext_resource type="Texture2D" uid="uid://8fobn7tfwbd5" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_36.png" id="38_7g47j"]
+[ext_resource type="Texture2D" uid="uid://criwny7whanvd" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_37.png" id="39_yiswf"]
+[ext_resource type="Texture2D" uid="uid://cd5culp0hus0j" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_38.png" id="40_ch7u4"]
+[ext_resource type="Texture2D" uid="uid://cpqnw8frd0mx1" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_39.png" id="41_17dhd"]
+[ext_resource type="Texture2D" uid="uid://b115tyjxkqxj4" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_40.png" id="42_woueg"]
+[ext_resource type="Texture2D" uid="uid://dl8il7yskwyvh" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_41.png" id="43_y1odo"]
+[ext_resource type="Texture2D" uid="uid://dwu3inbjtgkme" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_42.png" id="44_ivk86"]
+[ext_resource type="Texture2D" uid="uid://bblrkg00iq07k" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_43.png" id="45_qrjda"]
+[ext_resource type="Texture2D" uid="uid://ctdvcfqnyi8lt" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_44.png" id="46_ekwj2"]
+[ext_resource type="Texture2D" uid="uid://cvgpmom33o83v" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_45.png" id="47_ah66f"]
+[ext_resource type="Texture2D" uid="uid://dlohfi6m7n0n0" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_46.png" id="48_wkoa7"]
+[ext_resource type="Texture2D" uid="uid://7kg31qhwsmro" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_47.png" id="49_x1335"]
+[ext_resource type="Texture2D" uid="uid://8v7qdepoitkn" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_48.png" id="50_co0hg"]
+[ext_resource type="Texture2D" uid="uid://dj0td2lbddx2j" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_49.png" id="51_3yduy"]
+[ext_resource type="Texture2D" uid="uid://cnsd5v3j5r74v" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_50.png" id="52_b7xiu"]
+[ext_resource type="Texture2D" uid="uid://bpupup8oar5c0" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_51.png" id="53_7is7r"]
+[ext_resource type="Texture2D" uid="uid://bhsdxxgt7xt6" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_52.png" id="54_6r7on"]
+[ext_resource type="Texture2D" uid="uid://bo20y3oj4l6lu" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_53.png" id="55_hu3rr"]
+[ext_resource type="Texture2D" uid="uid://b18nxlt7kibom" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_54.png" id="56_03svi"]
+[ext_resource type="Texture2D" uid="uid://6y51rrhfwed4" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_55.png" id="57_w6e52"]
+[ext_resource type="Texture2D" uid="uid://cjqlsxugyl40" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_56.png" id="58_up58h"]
+[ext_resource type="Texture2D" uid="uid://imeqljix4mgr" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_57.png" id="59_10v72"]
+[ext_resource type="Texture2D" uid="uid://c35g65k4sj0cl" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_58.png" id="60_hsjm4"]
+[ext_resource type="Texture2D" uid="uid://bcvxb603cx634" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_59.png" id="61_7k0ad"]
+[ext_resource type="Texture2D" uid="uid://wdanyp7tgyi8" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_60.png" id="62_loona"]
+[ext_resource type="Texture2D" uid="uid://doffobqxyl1xa" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_61.png" id="63_dwqtn"]
+[ext_resource type="Texture2D" uid="uid://bcwtnab3xh4jw" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_62.png" id="64_vq2jb"]
+[ext_resource type="Texture2D" uid="uid://lxe1kgfafmmu" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_63.png" id="65_igfmr"]
+[ext_resource type="Texture2D" uid="uid://dccyakgqw58it" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_64.png" id="66_5ln0j"]
+[ext_resource type="Texture2D" uid="uid://b7bavrkdkirg4" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_65.png" id="67_n1hjy"]
+[ext_resource type="Texture2D" uid="uid://c5fjfmb2o1p05" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_66.png" id="68_ivote"]
+[ext_resource type="Texture2D" uid="uid://bxseu3hxxnj7s" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_67.png" id="69_p44el"]
+[ext_resource type="Texture2D" uid="uid://bmdafheeyi1je" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_68.png" id="70_xl30n"]
+[ext_resource type="Texture2D" uid="uid://dtmmjfk6sp6a2" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_70.png" id="72_inyld"]
+[ext_resource type="Texture2D" uid="uid://11h47n8p3857" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_71.png" id="73_p20ni"]
+[ext_resource type="Texture2D" uid="uid://cje3m2b1l86ki" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_72.png" id="74_ci15j"]
+[ext_resource type="Texture2D" uid="uid://bywdd5qw8tf0x" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_73.png" id="75_rysxb"]
+[ext_resource type="Texture2D" uid="uid://t4g120wc0bwd" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_74.png" id="76_niuq5"]
+[ext_resource type="Texture2D" uid="uid://bh1hsim26awhr" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_76.png" id="78_6va3o"]
+[ext_resource type="Texture2D" uid="uid://h86e0hik46pm" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_79.png" id="81_h6spl"]
+[ext_resource type="Texture2D" uid="uid://bsv6gnh5r134s" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_81.png" id="83_jp4sr"]
+[ext_resource type="Texture2D" uid="uid://cvyievambqxuw" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_82.png" id="84_688av"]
+[ext_resource type="Texture2D" uid="uid://c7mh1tly7j6dc" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_83.png" id="85_w8cmt"]
+[ext_resource type="Texture2D" uid="uid://c1h15ims4x0ju" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_84.png" id="86_qb2hf"]
+[ext_resource type="Texture2D" uid="uid://cwvqwbsc6caap" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_85.png" id="87_1mpq5"]
+[ext_resource type="Texture2D" uid="uid://saqg5a6seeyd" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_86.png" id="88_c2ivo"]
+[ext_resource type="Texture2D" uid="uid://dw3tf6yx580fk" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_95.png" id="88_xydhm"]
+[ext_resource type="Texture2D" uid="uid://4fbe24800t80" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_87.png" id="89_07y0o"]
+[ext_resource type="Texture2D" uid="uid://dg1ikqack8iab" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_88.png" id="90_sd87c"]
+[ext_resource type="Texture2D" uid="uid://cn5dfulj0fbm8" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_89.png" id="91_rmrei"]
+
+[node name="Keyboard" type="Node2D"]
+position = Vector2(10, 172)
+script = ExtResource("2_3in2y")
+
+[node name="Key1" type="Sprite2D" parent="."]
+position = Vector2(212, 119)
+texture = ExtResource("1_vjvex")
+
+[node name="Key2" type="Sprite2D" parent="."]
+position = Vector2(249, 119)
+texture = ExtResource("4_6kobh")
+
+[node name="Key3" type="Sprite2D" parent="."]
+position = Vector2(288, 119)
+texture = ExtResource("5_xhjxr")
+
+[node name="Key4" type="Sprite2D" parent="."]
+position = Vector2(325, 119)
+texture = ExtResource("6_m4a5b")
+
+[node name="Key5" type="Sprite2D" parent="."]
+position = Vector2(364, 119)
+texture = ExtResource("7_vnk5l")
+
+[node name="Key6" type="Sprite2D" parent="."]
+position = Vector2(401, 119)
+texture = ExtResource("8_imoit")
+
+[node name="Key7" type="Sprite2D" parent="."]
+position = Vector2(439, 119)
+texture = ExtResource("9_qsw37")
+
+[node name="Key8" type="Sprite2D" parent="."]
+position = Vector2(476, 119)
+texture = ExtResource("10_db4x8")
+
+[node name="Key9" type="Sprite2D" parent="."]
+position = Vector2(513, 119)
+texture = ExtResource("11_hfmk7")
+
+[node name="Key0" type="Sprite2D" parent="."]
+position = Vector2(551, 119)
+texture = ExtResource("12_kdcke")
+
+[node name="KeyDash" type="Sprite2D" parent="."]
+position = Vector2(589, 119)
+texture = ExtResource("13_ovmm2")
+
+[node name="KeyMinus" type="Sprite2D" parent="."]
+position = Vector2(627, 119)
+texture = ExtResource("14_5k1bq")
+
+[node name="KeyQ" type="Sprite2D" parent="."]
+position = Vector2(237, 159)
+texture = ExtResource("15_vn408")
+
+[node name="KeyW" type="Sprite2D" parent="."]
+position = Vector2(274, 159)
+texture = ExtResource("16_rsnrm")
+
+[node name="KeyE" type="Sprite2D" parent="."]
+position = Vector2(312, 159)
+texture = ExtResource("17_jelid")
+
+[node name="KeyR" type="Sprite2D" parent="."]
+position = Vector2(351, 159)
+texture = ExtResource("18_g6mgg")
+
+[node name="KeyT" type="Sprite2D" parent="."]
+position = Vector2(388, 159)
+texture = ExtResource("19_fo0r5")
+
+[node name="KeyY" type="Sprite2D" parent="."]
+position = Vector2(426, 159)
+texture = ExtResource("20_h23i3")
+
+[node name="KeyU" type="Sprite2D" parent="."]
+position = Vector2(464, 159)
+texture = ExtResource("21_6yl73")
+
+[node name="KeyI" type="Sprite2D" parent="."]
+position = Vector2(502, 159)
+texture = ExtResource("22_2fhre")
+
+[node name="KeyO" type="Sprite2D" parent="."]
+position = Vector2(540, 159)
+texture = ExtResource("23_itqow")
+
+[node name="KeyP" type="Sprite2D" parent="."]
+position = Vector2(576, 159)
+texture = ExtResource("24_0iwgc")
+
+[node name="KeyA" type="Sprite2D" parent="."]
+position = Vector2(254, 194)
+texture = ExtResource("25_h4ggu")
+
+[node name="KeyS" type="Sprite2D" parent="."]
+position = Vector2(293, 194)
+texture = ExtResource("26_vhvrr")
+
+[node name="KeyD" type="Sprite2D" parent="."]
+position = Vector2(334, 194)
+texture = ExtResource("27_uwp4i")
+
+[node name="KeyF" type="Sprite2D" parent="."]
+position = Vector2(373, 194)
+texture = ExtResource("28_manae")
+
+[node name="KeyG" type="Sprite2D" parent="."]
+position = Vector2(413, 194)
+texture = ExtResource("29_ia5md")
+
+[node name="KeyH" type="Sprite2D" parent="."]
+position = Vector2(452, 194)
+texture = ExtResource("30_oob5i")
+
+[node name="KeyJ" type="Sprite2D" parent="."]
+position = Vector2(490, 194)
+texture = ExtResource("31_dly1v")
+
+[node name="KeyK" type="Sprite2D" parent="."]
+position = Vector2(528, 194)
+texture = ExtResource("32_wxhl3")
+
+[node name="KeyL" type="Sprite2D" parent="."]
+position = Vector2(565, 194)
+texture = ExtResource("33_25xa3")
+
+[node name="KeyZ" type="Sprite2D" parent="."]
+position = Vector2(279, 229)
+texture = ExtResource("34_mi8dt")
+
+[node name="KeyX" type="Sprite2D" parent="."]
+position = Vector2(319, 229)
+texture = ExtResource("35_dql8p")
+
+[node name="KeyC" type="Sprite2D" parent="."]
+position = Vector2(358, 229)
+texture = ExtResource("36_jrif7")
+
+[node name="KeyV" type="Sprite2D" parent="."]
+position = Vector2(397, 229)
+texture = ExtResource("37_hyq54")
+
+[node name="KeyB" type="Sprite2D" parent="."]
+position = Vector2(437, 229)
+texture = ExtResource("38_7g47j")
+
+[node name="KeyN" type="Sprite2D" parent="."]
+position = Vector2(475, 229)
+texture = ExtResource("39_yiswf")
+
+[node name="KeyM" type="Sprite2D" parent="."]
+position = Vector2(512, 229)
+texture = ExtResource("40_ch7u4")
+
+[node name="Keyboard39" type="Sprite2D" parent="."]
+position = Vector2(602, 194)
+texture = ExtResource("41_17dhd")
+
+[node name="KeyAt" type="Sprite2D" parent="."]
+position = Vector2(549, 229)
+texture = ExtResource("42_woueg")
+
+[node name="Key41" type="Sprite2D" parent="."]
+position = Vector2(163, 117)
+texture = ExtResource("43_y1odo")
+
+[node name="Key42" type="Sprite2D" parent="."]
+position = Vector2(614, 159)
+texture = ExtResource("44_ivk86")
+
+[node name="Key43" type="Sprite2D" parent="."]
+position = Vector2(588, 229)
+texture = ExtResource("45_qrjda")
+
+[node name="Key44" type="Sprite2D" parent="."]
+position = Vector2(627, 229)
+texture = ExtResource("46_ekwj2")
+
+[node name="Key45" type="Sprite2D" parent="."]
+position = Vector2(640, 194)
+texture = ExtResource("47_ah66f")
+
+[node name="Key46" type="Sprite2D" parent="."]
+position = Vector2(651, 266)
+texture = ExtResource("48_wkoa7")
+
+[node name="Key48" type="Sprite2D" parent="."]
+position = Vector2(573, 266)
+texture = ExtResource("50_co0hg")
+
+[node name="Key47" type="Sprite2D" parent="."]
+position = Vector2(225, 266)
+texture = ExtResource("48_wkoa7")
+
+[node name="Key69" type="Sprite2D" parent="."]
+position = Vector2(299, 266)
+texture = ExtResource("50_co0hg")
+
+[node name="Key49" type="Sprite2D" parent="."]
+position = Vector2(250, 79)
+texture = ExtResource("51_3yduy")
+
+[node name="Key50" type="Sprite2D" parent="."]
+position = Vector2(288, 79)
+texture = ExtResource("52_b7xiu")
+
+[node name="Key51" type="Sprite2D" parent="."]
+position = Vector2(326, 79)
+texture = ExtResource("53_7is7r")
+
+[node name="Key52" type="Sprite2D" parent="."]
+position = Vector2(365, 79)
+texture = ExtResource("54_6r7on")
+
+[node name="Key53" type="Sprite2D" parent="."]
+position = Vector2(403, 79)
+texture = ExtResource("55_hu3rr")
+
+[node name="Key54" type="Sprite2D" parent="."]
+position = Vector2(441, 79)
+texture = ExtResource("56_03svi")
+
+[node name="Key55" type="Sprite2D" parent="."]
+position = Vector2(479, 79)
+texture = ExtResource("57_w6e52")
+
+[node name="Key56" type="Sprite2D" parent="."]
+position = Vector2(518, 79)
+texture = ExtResource("58_up58h")
+
+[node name="Key57" type="Sprite2D" parent="."]
+position = Vector2(557, 79)
+texture = ExtResource("59_10v72")
+
+[node name="Key58" type="Sprite2D" parent="."]
+position = Vector2(596, 79)
+texture = ExtResource("60_hsjm4")
+
+[node name="Key59" type="Sprite2D" parent="."]
+position = Vector2(638, 79)
+texture = ExtResource("61_7k0ad")
+
+[node name="Key60" type="Sprite2D" parent="."]
+position = Vector2(679, 79)
+texture = ExtResource("62_loona")
+
+[node name="Key61" type="Sprite2D" parent="."]
+position = Vector2(164, 78)
+texture = ExtResource("63_dwqtn")
+
+[node name="Key62" type="Sprite2D" parent="."]
+position = Vector2(741, 79)
+texture = ExtResource("64_vq2jb")
+
+[node name="Key63" type="Sprite2D" parent="."]
+position = Vector2(740, 119)
+texture = ExtResource("65_igfmr")
+
+[node name="Key64" type="Sprite2D" parent="."]
+position = Vector2(740, 153)
+texture = ExtResource("66_5ln0j")
+
+[node name="Key65" type="Sprite2D" parent="."]
+position = Vector2(811, 119)
+texture = ExtResource("67_n1hjy")
+
+[node name="Key66" type="Sprite2D" parent="."]
+position = Vector2(811, 154)
+texture = ExtResource("68_ivote")
+
+[node name="Key67" type="Sprite2D" parent="."]
+position = Vector2(775, 119)
+texture = ExtResource("69_p44el")
+
+[node name="Key68" type="Sprite2D" parent="."]
+position = Vector2(776, 153)
+texture = ExtResource("70_xl30n")
+
+[node name="Key70" type="Sprite2D" parent="."]
+position = Vector2(774, 231)
+texture = ExtResource("72_inyld")
+
+[node name="Key71" type="Sprite2D" parent="."]
+position = Vector2(775, 267)
+texture = ExtResource("73_p20ni")
+
+[node name="Key72" type="Sprite2D" parent="."]
+position = Vector2(811, 267)
+texture = ExtResource("74_ci15j")
+
+[node name="Key73" type="Sprite2D" parent="."]
+position = Vector2(737, 268)
+texture = ExtResource("75_rysxb")
+
+[node name="Key74" type="Sprite2D" parent="."]
+position = Vector2(779, 79)
+texture = ExtResource("76_niuq5")
+
+[node name="Key76" type="Sprite2D" parent="."]
+position = Vector2(651, 158)
+texture = ExtResource("78_6va3o")
+
+[node name="Key84" type="Sprite2D" parent="."]
+position = Vector2(664, 229)
+texture = ExtResource("86_qb2hf")
+
+[node name="Key85" type="Sprite2D" parent="."]
+position = Vector2(696, 229)
+texture = ExtResource("87_1mpq5")
+
+[node name="Key97" type="Sprite2D" parent="."]
+position = Vector2(207, 229)
+texture = ExtResource("86_qb2hf")
+
+[node name="Key98" type="Sprite2D" parent="."]
+position = Vector2(239, 229)
+texture = ExtResource("87_1mpq5")
+
+[node name="Key86" type="Sprite2D" parent="."]
+position = Vector2(665, 119)
+texture = ExtResource("88_c2ivo")
+
+[node name="Key87" type="Sprite2D" parent="."]
+position = Vector2(697, 119)
+texture = ExtResource("89_07y0o")
+
+[node name="Key88" type="Sprite2D" parent="."]
+position = Vector2(169, 159)
+texture = ExtResource("90_sd87c")
+
+[node name="Key89" type="Sprite2D" parent="."]
+position = Vector2(200, 159)
+texture = ExtResource("91_rmrei")
+
+[node name="Key90" type="Sprite2D" parent="."]
+position = Vector2(186, 194)
+texture = ExtResource("2_dlf0v")
+
+[node name="Key91" type="Sprite2D" parent="."]
+position = Vector2(217, 194)
+texture = ExtResource("3_d0md3")
+
+[node name="Key75" type="Sprite2D" parent="."]
+position = Vector2(613, 266)
+texture = ExtResource("49_x1335")
+
+[node name="Key77" type="Sprite2D" parent="."]
+position = Vector2(262, 266)
+texture = ExtResource("49_x1335")
+
+[node name="KeyEnter" type="Sprite2D" parent="."]
+modulate = Color(0.988235, 1, 1, 1)
+position = Vector2(151, 89)
+
+[node name="Key79" type="Sprite2D" parent="KeyEnter"]
+position = Vector2(543, 69)
+texture = ExtResource("81_h6spl")
+
+[node name="Key99" type="Sprite2D" parent="KeyEnter"]
+position = Vector2(543, 101)
+texture = ExtResource("88_xydhm")
+
+[node name="KeySpace" type="Sprite2D" parent="."]
+position = Vector2(151, 89)
+
+[node name="Key81" type="Sprite2D" parent="KeySpace"]
+position = Vector2(191, 177)
+texture = ExtResource("83_jp4sr")
+
+[node name="Key82" type="Sprite2D" parent="KeySpace"]
+position = Vector2(222, 177)
+texture = ExtResource("84_688av")
+
+[node name="Key93" type="Sprite2D" parent="KeySpace"]
+position = Vector2(254, 177)
+texture = ExtResource("84_688av")
+
+[node name="Key94" type="Sprite2D" parent="KeySpace"]
+position = Vector2(285, 177)
+texture = ExtResource("84_688av")
+
+[node name="Key95" type="Sprite2D" parent="KeySpace"]
+position = Vector2(317, 177)
+texture = ExtResource("84_688av")
+
+[node name="Key96" type="Sprite2D" parent="KeySpace"]
+position = Vector2(349, 177)
+texture = ExtResource("84_688av")
+
+[node name="Key83" type="Sprite2D" parent="KeySpace"]
+position = Vector2(381, 177)
+texture = ExtResource("85_w8cmt")
