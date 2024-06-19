@@ -5,6 +5,7 @@ extends Node2D
 @onready var pick_up = $PickUp
 @onready var hang_up = $HangUp
 @onready var voice = $Voice
+@onready var hang_up_tone = $HangUpTone
 
 
 @onready var game_manager = %GameManager
@@ -13,6 +14,8 @@ const GIBBERISH_PATH = "res://gibberish.txt"
 var lines_of_text    = []
 var answers          = []
 var is_ringing       = false
+var is_talking       = false
+var is_ready = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,10 +27,14 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		print("Phone clicked!")
 		if not is_ringing:
 			hang_up.play()
+			hang_up_tone.stop()
+			is_talking = false
+
 		elif is_ringing:
 			pick_up.play()
 			ringing.stop()
 			is_ringing = false
+			is_ready = false
 			
 			var line = get_random_line()
 			var words = line.split(' ') #separate the line into words
@@ -51,6 +58,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 					answers.append(word)
 			
 			await get_tree().create_timer(1).timeout
+			is_talking = true
 			game_manager.set_subtitle(line)
 
 func _on_timer_timeout():
