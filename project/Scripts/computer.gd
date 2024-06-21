@@ -5,6 +5,7 @@ class_name Computer
 @onready var game_manager  = %GameManager
 @onready var email_content = $Screen/EmailContent
 @onready var button        = $Screen/Button
+@onready var screen_area   = $Screen/ScreenArea
 
 static var answer_set = []
 
