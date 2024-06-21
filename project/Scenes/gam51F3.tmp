@@ -44,5 +44,3 @@ text = "Score: 0"
 
 [node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
 position = Vector2(-689, -53)
-
-[connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]

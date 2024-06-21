@@ -1,10 +1,12 @@
 extends Node
+
 @onready var subtitle = $Subtitle
 @onready var phone    = $Phone
 @onready var voice    = %Voice
 @onready var computer = $Computer
 @onready var score    = $Score
-
+var popup_scene     = load("res://Scenes/popup_window.tscn")
+var active_popups   = []
 var voice_trigger   = 0
 var current_answers = ""
 var points          = 0
@@ -26,6 +28,7 @@ func set_subtitle(line):
 			break
 	current_answers = phone.answers
 	Computer.add_answers(current_answers)
+	create_popup()
 	
 	#wait 5 seconds after all text is shown to cut it all off
 	await get_tree().create_timer(5).timeout
@@ -38,3 +41,21 @@ func randomize_pitch(audio_player):
 func add_points(num):
 	points += num
 	score.text = "Score: " + str(points)
+
+func create_popup():
+	var popup_instance = popup_scene.instantiate()
+	popup_instance.set_manager(self)
+	add_child(popup_instance)
+	active_popups.append(popup_instance)
+	computer.email_content.set_editable(false)
+	computer.email_content.mouse_filter = Control.MOUSE_FILTER_IGNORE  # Ignore mouse interactions
+	computer.button.mouse_filter        = Control.MOUSE_FILTER_IGNORE
+	
+func on_popup_closed(popup):
+	active_popups.erase(popup)
+	if active_popups.is_empty():
+		computer.email_content.set_editable(true)
+		computer.email_content.mouse_filter = Control.MOUSE_FILTER_STOP  # Allow mouse interactions again
+		computer.button.mouse_filter        = Control.MOUSE_FILTER_STOP
+
+
