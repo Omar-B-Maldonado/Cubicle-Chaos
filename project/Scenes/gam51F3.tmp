@@ -40,13 +40,7 @@ offset_right = -339.0
 offset_bottom = -264.0
 text = "Score: 0"
 
-[node name="PopupTimer" type="Timer" parent="GameManager"]
-wait_time = 2.065
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
 position = Vector2(-689, -53)
-
-[connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
-[connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]
