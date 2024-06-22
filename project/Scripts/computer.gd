@@ -6,7 +6,7 @@ class_name Computer
 @onready var email_content = $Screen/EmailContent
 @onready var button        = $Screen/Button
 @onready var screen_area   = $Screen/ScreenArea
-
+@onready var phone         = Phone
 static var answer_set = []
 
 # Called when the node enters the scene tree for the first time.

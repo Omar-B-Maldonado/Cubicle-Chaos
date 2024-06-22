@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name phone
+class_name Phone
 
 #audio
 @onready var ringing      = $Ringing
