@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbkf4wyo35cis"]
+
+[ext_resource type="Script" path="res://Scripts/document.gd" id="1_o2otn"]
+[ext_resource type="Texture2D" uid="uid://cqai77janou7g" path="res://Images/document-sprite.png" id="2_ydbeo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e14k"]
+size = Vector2(71, 102.75)
+
+[node name="Document" type="Node2D"]
+
+[node name="DocumentArea" type="Area2D" parent="." node_paths=PackedStringArray("documentNode")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("DocumentShape")
+typeofDocument = 2
+
+[node name="DocumentShape" type="CollisionShape2D" parent="DocumentArea"]
+position = Vector2(424, 320)
+shape = SubResource("RectangleShape2D_7e14k")
+
+[node name="Document-sprite" type="Sprite2D" parent="DocumentArea/DocumentShape"]
+position = Vector2(-1, 5)
+texture = ExtResource("2_ydbeo")

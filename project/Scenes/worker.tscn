@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://br82nmhyaw4yq"]
+
+[ext_resource type="Script" path="res://Scripts/worker.gd" id="1_wd0fc"]
+[ext_resource type="Texture2D" uid="uid://cg2by2cmnihn5" path="res://Images/worker.png" id="2_a4l7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_embjc"]
+size = Vector2(60.25, 115)
+
+[node name="Worker" type="Node2D"]
+
+[node name="WorkerArea" type="Area2D" parent="." node_paths=PackedStringArray("workerSprite", "workerText")]
+script = ExtResource("1_wd0fc")
+workerSprite = NodePath("WorkerShape/WorkerSprite")
+workerText = NodePath("Label")
+
+[node name="WorkerShape" type="CollisionShape2D" parent="WorkerArea"]
+position = Vector2(175.875, 308.5)
+shape = SubResource("RectangleShape2D_embjc")
+
+[node name="WorkerSprite" type="Sprite2D" parent="WorkerArea/WorkerShape"]
+scale = Vector2(0.149071, 0.149071)
+texture = ExtResource("2_a4l7b")
+
+[node name="Label" type="Label" parent="WorkerArea"]
+offset_left = 113.0
+offset_top = 217.0
+offset_right = 246.0
+offset_bottom = 240.0
+text = "I need a "
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="WorkerArea" to="WorkerArea" method="_on_area_entered"]
