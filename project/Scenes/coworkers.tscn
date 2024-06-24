@@ -20,7 +20,7 @@ size = Vector2(26.5195, 196.328)
 
 [node name="PaperFolder" type="Sprite2D" parent="Documents"]
 texture_filter = 1
-position = Vector2(512, 301)
+position = Vector2(212, 328.5)
 texture = ExtResource("1_0m24w")
 
 [node name="LetterBin" type="Area2D" parent="Documents" node_paths=PackedStringArray("documentNode")]
@@ -30,7 +30,8 @@ documentNode = NodePath("LetterBinShape")
 typeofDocument = 2
 
 [node name="LetterBinShape" type="CollisionShape2D" parent="Documents/LetterBin"]
-position = Vector2(517, 315)
+visible = false
+position = Vector2(217, 342.5)
 shape = SubResource("RectangleShape2D_p1oxc")
 
 [node name="Document-sprite" type="Sprite2D" parent="Documents/LetterBin/LetterBinShape"]
@@ -44,7 +45,8 @@ documentNode = NodePath("ReportBinShape")
 typeofDocument = 1
 
 [node name="ReportBinShape" type="CollisionShape2D" parent="Documents/ReportBin"]
-position = Vector2(544, 315)
+visible = false
+position = Vector2(244, 342.5)
 shape = SubResource("RectangleShape2D_y5fyu")
 
 [node name="Document-sprite" type="Sprite2D" parent="Documents/ReportBin/ReportBinShape"]
@@ -56,24 +58,43 @@ script = ExtResource("1_qsyqm")
 documentNode = NodePath("ContractBinShape")
 
 [node name="ContractBinShape" type="CollisionShape2D" parent="Documents/ContractBin"]
-position = Vector2(570, 315)
+visible = false
+position = Vector2(270, 342.5)
 shape = SubResource("RectangleShape2D_qtdds")
 
 [node name="Document-sprite" type="Sprite2D" parent="Documents/ContractBin/ContractBinShape"]
 texture = ExtResource("2_dc8wx")
 
-[node name="SpawnWorkerTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+[node name="SpawnArea1" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
+position = Vector2(200, 200)
 script = ExtResource("1_oh2hj")
+spawnTimer = NodePath("SpawnWorkerTimer")
 
-[node name="SpawnArea1" type="Node2D" parent="SpawnWorkerTimer"]
-position = Vector2(733, 310)
+[node name="SpawnWorkerTimer" type="Timer" parent="SpawnArea1"]
+wait_time = 3.0
+one_shot = true
 
-[node name="SpawnArea2" type="Node2D" parent="SpawnWorkerTimer"]
-position = Vector2(839, 308)
+[node name="SpawnArea2" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
+position = Vector2(300, 200)
+script = ExtResource("1_oh2hj")
+spawnTimer = NodePath("SpawnWorkerTimer")
 
-[node name="SpawnArea3" type="Node2D" parent="SpawnWorkerTimer"]
-position = Vector2(938, 308)
+[node name="SpawnWorkerTimer" type="Timer" parent="SpawnArea2"]
+wait_time = 3.0
+one_shot = true
 
-[connection signal="timeout" from="SpawnWorkerTimer" to="SpawnWorkerTimer" method="_on_timeout"]
+[node name="SpawnArea3" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
+position = Vector2(400, 200)
+script = ExtResource("1_oh2hj")
+spawnTimer = NodePath("SpawnWorkerTimer")
+
+[node name="SpawnWorkerTimer" type="Timer" parent="SpawnArea3"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="child_exiting_tree" from="SpawnArea1" to="SpawnArea1" method="_on_child_exiting_tree"]
+[connection signal="timeout" from="SpawnArea1/SpawnWorkerTimer" to="SpawnArea1" method="_on_spawn_worker_timer_timeout"]
+[connection signal="child_exiting_tree" from="SpawnArea2" to="SpawnArea2" method="_on_child_exiting_tree"]
+[connection signal="timeout" from="SpawnArea2/SpawnWorkerTimer" to="SpawnArea2" method="_on_spawn_worker_timer_timeout"]
+[connection signal="child_exiting_tree" from="SpawnArea3" to="SpawnArea3" method="_on_child_exiting_tree"]
+[connection signal="timeout" from="SpawnArea3/SpawnWorkerTimer" to="SpawnArea3" method="_on_spawn_worker_timer_timeout"]
