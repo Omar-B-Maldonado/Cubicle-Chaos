@@ -5,6 +5,7 @@ enum Document {CONTRACT, REPORT, LETTER}
 
 @export var documentNode: Node2D
 @export var typeofDocument: Document
+@export var glow: ColorRect
 
 var isAreaActive: bool = false
 var isDragging: bool = false
@@ -22,11 +23,13 @@ func _process(delta):
 func _mouse_enter():
 	print("Entering!")
 	isAreaActive = true
+	glow.visible = true
 	
 
 func _mouse_exit():
 	print("Exiting")
 	isAreaActive = false;
+	glow.visible = false
 	
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == 1:
