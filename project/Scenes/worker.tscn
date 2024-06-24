@@ -7,6 +7,8 @@
 size = Vector2(60.25, 115)
 
 [node name="Worker" type="Node2D" node_paths=PackedStringArray("workerSprite", "workerText")]
+z_index = -2
+z_as_relative = false
 script = ExtResource("1_wd0fc")
 workerSprite = NodePath("WorkerArea/WorkerShape/WorkerSprite")
 workerText = NodePath("WorkerArea/Label")

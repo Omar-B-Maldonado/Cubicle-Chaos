@@ -38,12 +38,12 @@ glow = NodePath("ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="LetterBin"]
 visible = false
-modulate = Color(5.40392, 1, 0, 1)
+self_modulate = Color(56.216, 4.324, 0, 1)
 offset_left = -6.0
 offset_top = -86.0
 offset_right = 18.0
 offset_bottom = 111.0
-color = Color(0.945098, 0.368627, 0.27451, 0.027451)
+color = Color(0.960784, 0.588235, 0.333333, 0.027451)
 metadata/_edit_use_anchors_ = true
 
 [node name="LetterBinShape" type="CollisionShape2D" parent="LetterBin"]
