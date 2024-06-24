@@ -1,42 +1,45 @@
 [gd_scene load_steps=5 format=3 uid="uid://bipstddw3iioq"]
 
 [ext_resource type="Script" path="res://Scripts/computer.gd" id="1_n58x2"]
-[ext_resource type="Texture2D" uid="uid://b2l8gitywl3m3" path="res://Images/computer.jpg" id="1_y4qok"]
 [ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_85808"]
+[ext_resource type="Texture2D" uid="uid://ybkrqd881lid" path="res://Images/Sprite-0002.png" id="2_mhdrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txq6l"]
-size = Vector2(424, 206)
+size = Vector2(486, 234)
 
 [node name="Computer" type="Node2D"]
+position = Vector2(20, 9)
 script = ExtResource("1_n58x2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5, -4)
-scale = Vector2(0.798046, 0.772506)
-texture = ExtResource("1_y4qok")
+position = Vector2(5.00001, 2.00001)
+scale = Vector2(1.0083, 1.01299)
+texture = ExtResource("2_mhdrv")
 
 [node name="Screen" type="Area2D" parent="."]
 
 [node name="ScreenArea" type="CollisionShape2D" parent="Screen"]
-position = Vector2(5, -45)
+position = Vector2(5, 2)
 shape = SubResource("RectangleShape2D_txq6l")
 
 [node name="EmailContent" type="TextEdit" parent="Screen"]
 custom_minimum_size = Vector2(200, 200)
-offset_left = -71.0
-offset_top = -142.0
-offset_right = 147.0
-offset_bottom = 58.0
+offset_left = 15.0
+offset_top = -83.0
+offset_right = 233.0
+offset_bottom = 117.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_85808")
 theme_override_font_sizes/font_size = 24
 wrap_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Screen"]
-offset_left = 154.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 47.0
+offset_left = 15.0
+offset_top = -114.0
+offset_right = 77.0
+offset_bottom = -83.0
 text = "Send"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Screen/Button" to="." method="_on_button_pressed"]

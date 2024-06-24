@@ -1,7 +1,8 @@
-[gd_scene load_steps=89 format=3 uid="uid://dxphk0gh4y332"]
+[gd_scene load_steps=90 format=3 uid="uid://dxphk0gh4y332"]
 
 [ext_resource type="Texture2D" uid="uid://b3svktp5tdyv" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="1_vjvex"]
 [ext_resource type="Script" path="res://Scripts/keyboard.gd" id="2_3in2y"]
+[ext_resource type="Texture2D" uid="uid://dvnmr6xvhbi8j" path="res://Images/keyboard_bg.png" id="2_46q64"]
 [ext_resource type="Texture2D" uid="uid://dwf0qioih4sjp" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_90.png" id="2_dlf0v"]
 [ext_resource type="Texture2D" uid="uid://cxi3qhqio7rc5" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_91.png" id="3_d0md3"]
 [ext_resource type="Texture2D" uid="uid://cyx4pu6r4xii3" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_2.png" id="4_6kobh"]
@@ -92,6 +93,10 @@
 [node name="Keyboard" type="Node2D"]
 position = Vector2(10, 172)
 script = ExtResource("2_3in2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(488, 174)
+texture = ExtResource("2_46q64")
 
 [node name="Key1" type="Sprite2D" parent="."]
 position = Vector2(212, 119)

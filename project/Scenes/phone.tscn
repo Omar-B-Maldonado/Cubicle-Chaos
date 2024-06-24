@@ -9,14 +9,14 @@
 [ext_resource type="AudioStream" uid="uid://bp5pq763cq0sp" path="res://Sounds/hang_up_tone.mp3" id="7_62b6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pt3"]
-size = Vector2(253, 173)
+size = Vector2(206.5, 179)
 
 [node name="Phone" type="Node2D"]
 script = ExtResource("1_5yodq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2, 1)
-scale = Vector2(0.725352, 0.759649)
+position = Vector2(9, -28)
+scale = Vector2(0.601232, 0.671272)
 texture = ExtResource("1_xxrn4")
 
 [node name="Timer" type="Timer" parent="."]
@@ -27,7 +27,7 @@ one_shot = true
 position = Vector2(-0.5, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.5, 11)
+position = Vector2(14.5, -8)
 shape = SubResource("RectangleShape2D_r4pt3")
 
 [node name="Ringing" type="AudioStreamPlayer2D" parent="."]

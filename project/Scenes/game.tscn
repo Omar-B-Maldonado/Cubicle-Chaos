@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://8f35yelrpbuy"]
+[gd_scene load_steps=7 format=3 uid="uid://8f35yelrpbuy"]
 
+[ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/image.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
 [ext_resource type="PackedScene" uid="uid://di2h0c7y4sp2" path="res://Scenes/phone.tscn" id="1_jqgf3"]
 [ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_infar"]
@@ -8,19 +9,24 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(0, -6)
+texture = ExtResource("1_44csg")
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_cgfok")
 
 [node name="Phone" parent="GameManager" instance=ExtResource("1_jqgf3")]
-position = Vector2(433, -26)
+position = Vector2(-530, 120)
 
 [node name="Subtitle" type="Label" parent="GameManager"]
 texture_filter = 1
-offset_left = -578.0
-offset_top = 195.0
-offset_right = 575.0
-offset_bottom = 325.0
+offset_left = -639.0
+offset_top = -365.0
+offset_right = 222.0
+offset_bottom = -174.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/font = ExtResource("2_infar")
@@ -30,23 +36,28 @@ autowrap_mode = 2
 
 [node name="Computer" parent="GameManager" instance=ExtResource("5_2qwyh")]
 z_index = -1
-position = Vector2(15, -92)
+position = Vector2(-42, -40)
 
 [node name="Score" type="Label" parent="GameManager"]
 z_index = 505
-offset_left = -393.0
-offset_top = -296.0
-offset_right = -339.0
-offset_bottom = -264.0
+offset_left = 359.0
+offset_top = 269.0
+offset_right = 535.0
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_infar")
+theme_override_font_sizes/font_size = 58
 text = "Score: 0"
 
 [node name="PopupTimer" type="Timer" parent="GameManager"]
 wait_time = 2.065
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -7)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
-position = Vector2(-689, -53)
+position = Vector2(-515, 51)
 
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
 [connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]
