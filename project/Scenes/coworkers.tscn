@@ -73,4 +73,13 @@ wait_time = 3.0
 autostart = true
 script = ExtResource("1_oh2hj")
 
+[node name="SpawnArea1" type="Node2D" parent="SpawnWorkerTimer"]
+position = Vector2(721, 92)
+
+[node name="SpawnArea2" type="Node2D" parent="SpawnWorkerTimer"]
+position = Vector2(827, 90)
+
+[node name="SpawnArea3" type="Node2D" parent="SpawnWorkerTimer"]
+position = Vector2(926, 90)
+
 [connection signal="timeout" from="SpawnWorkerTimer" to="SpawnWorkerTimer" method="_on_timeout"]
