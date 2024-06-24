@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://br82nmhyaw4yq"]
+[gd_scene load_steps=5 format=3 uid="uid://br82nmhyaw4yq"]
 
 [ext_resource type="Script" path="res://Scripts/worker.gd" id="1_wd0fc"]
 [ext_resource type="Texture2D" uid="uid://ly304660g6y8" path="res://Images/pixellated_office_worker.png" id="2_xcqnq"]
+[ext_resource type="Texture2D" uid="uid://bc4qg5ew1ydpq" path="res://Assets/RetroWindowsGUI/Red Paper.png" id="3_m1wxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_embjc"]
 size = Vector2(60.25, 115)
@@ -34,6 +35,12 @@ metadata/_edit_use_anchors_ = true
 [node name="WorkerTimer" type="Timer" parent="WorkerArea"]
 wait_time = 5.0
 autostart = true
+
+[node name="RedPaper" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(88, 27)
+scale = Vector2(1.61579, 1.61579)
+texture = ExtResource("3_m1wxi")
 
 [connection signal="area_entered" from="WorkerArea" to="." method="_on_worker_area_area_entered"]
 [connection signal="timeout" from="WorkerArea/WorkerTimer" to="." method="_on_worker_timer_timeout"]
