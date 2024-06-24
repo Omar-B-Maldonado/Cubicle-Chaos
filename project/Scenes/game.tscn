@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8f35yelrpbuy"]
+[gd_scene load_steps=10 format=3 uid="uid://8f35yelrpbuy"]
 
 [ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/background.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
@@ -7,13 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
-[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="PackedScene" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="Texture2D" uid="uid://ceu7mtsr5qwbi" path="res://Images/background_top.png" id="10_f7r2y"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1000
-position = Vector2(0, -6)
+position = Vector2(2, 99)
+scale = Vector2(1.00156, 1)
 texture = ExtResource("1_44csg")
 
 [node name="GameManager" type="Node" parent="."]
@@ -71,6 +73,11 @@ position = Vector2(-545, 50)
 [node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
 z_index = -1
 position = Vector2(-184, -142)
+
+[node name="BackgroundTop" type="Sprite2D" parent="."]
+position = Vector2(3, -260.25)
+scale = Vector2(1, 1.00239)
+texture = ExtResource("10_f7r2y")
 
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
 [connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]
