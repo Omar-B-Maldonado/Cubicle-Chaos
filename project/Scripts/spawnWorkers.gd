@@ -8,7 +8,6 @@ func _ready():
 func _spawn_worker():
 	var workerNode = preload("res://Scenes/worker.tscn")
 	var instance = workerNode.instantiate()
-	
 	add_child(instance)
 	instance.global_position = self.global_position
 

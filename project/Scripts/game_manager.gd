@@ -1,18 +1,22 @@
 extends Node
+class_name GameManager
 
 @onready var subtitle = $Subtitle
 @onready var phone    = $Phone
 @onready var voice    = %Voice
 @onready var computer = $Computer
-@onready var score    = $Score
+static var score
 @onready var popup_timer = $PopupTimer
 
 var popup_scene     = load("res://Scenes/popup_window.tscn")
 var active_popups   = []
 var voice_trigger   = 0
 var current_answers = ""
-var points          = 0
+static var points          = 0
 
+func _ready():
+	score = $Score
+	
 func set_subtitle(line):
 	subtitle.text = line
 	subtitle.visible_characters = 0
@@ -40,7 +44,7 @@ func set_subtitle(line):
 func randomize_pitch(audio_player):
 	audio_player.pitch_scale = randf_range(0.7, 1.5)
 	
-func add_points(num):
+static func add_points(num):
 	points += num
 	score.text = "Score: " + str(points)
 
