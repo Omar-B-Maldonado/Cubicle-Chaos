@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
-[ext_resource type="PackedScene" uid="uid://bp6herso5l1j" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
 
 [node name="Game" type="Node2D"]
 
