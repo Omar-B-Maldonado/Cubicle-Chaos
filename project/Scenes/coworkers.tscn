@@ -13,6 +13,7 @@ size = Vector2(53.25, 60)
 [node name="Documents" type="Node2D" parent="."]
 
 [node name="PaperFolder" type="Sprite2D" parent="Documents"]
+texture_filter = 1
 texture = ExtResource("1_0m24w")
 
 [node name="LetterBin" type="Area2D" parent="Documents" node_paths=PackedStringArray("documentNode")]

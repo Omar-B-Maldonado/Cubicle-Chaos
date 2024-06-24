@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://8f35yelrpbuy"]
 
-[ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/image.png" id="1_44csg"]
+[ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/background.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
 [ext_resource type="PackedScene" uid="uid://di2h0c7y4sp2" path="res://Scenes/phone.tscn" id="1_jqgf3"]
 [ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_infar"]
@@ -20,7 +20,9 @@ unique_name_in_owner = true
 script = ExtResource("1_cgfok")
 
 [node name="Phone" parent="GameManager" instance=ExtResource("1_jqgf3")]
-position = Vector2(-530, 120)
+texture_filter = 1
+position = Vector2(-613, 142)
+scale = Vector2(1.66459, 1.49874)
 
 [node name="Subtitle" type="Label" parent="GameManager"]
 texture_filter = 1
@@ -62,7 +64,7 @@ position = Vector2(-545, 50)
 
 [node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
 z_index = -1
-position = Vector2(312, 156)
+position = Vector2(307, 134)
 
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
 [connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]

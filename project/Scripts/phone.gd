@@ -8,6 +8,7 @@ class_name Phone
 @onready var hang_up      = $HangUp
 @onready var voice        = $Voice
 @onready var hang_up_tone = $HangUpTone
+@onready var sprite_2d    = $Sprite2D
 
 #functionality
 @onready var game_manager = %GameManager
@@ -23,6 +24,7 @@ var is_talking       = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_txt_file(GIBBERISH_PATH)
+	sprite_2d.visible = false
 	timer.start()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
@@ -32,12 +34,14 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			hang_up.play()
 			hang_up_tone.stop()
 			is_talking = false
+			sprite_2d.visible = false
 			if timer.time_left <= 0: timer.start() #counts down till next phone call
 
 		elif is_ringing:
 			pick_up.play()
 			ringing.stop()
 			is_ringing = false
+			sprite_2d.visible = true
 			
 			var line = get_random_line()
 			var words = line.split(' ') #separate the line into words
