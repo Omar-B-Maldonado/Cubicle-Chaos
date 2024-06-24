@@ -1,23 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbkf4wyo35cis"]
+[gd_scene load_steps=7 format=3 uid="uid://dk4dyy4qpy0wr"]
 
+[ext_resource type="Texture2D" uid="uid://dh13xn0m6tc35" path="res://Images/paper folder.png" id="1_hv7gf"]
 [ext_resource type="Script" path="res://Scripts/document.gd" id="1_o2otn"]
 [ext_resource type="Texture2D" uid="uid://cqai77janou7g" path="res://Images/document-sprite.png" id="2_ydbeo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e14k"]
-size = Vector2(71, 102.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7tjf"]
+size = Vector2(26, 196.656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63dax"]
+size = Vector2(23.0391, 196.656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8q3g"]
+size = Vector2(26.5195, 196.328)
 
 [node name="Document" type="Node2D"]
 
-[node name="DocumentArea" type="Area2D" parent="." node_paths=PackedStringArray("documentNode")]
+[node name="PaperFolder" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hv7gf")
+
+[node name="LetterBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode")]
 z_index = 4
 script = ExtResource("1_o2otn")
-documentNode = NodePath("DocumentShape")
+documentNode = NodePath("LetterBinShape")
 typeofDocument = 2
 
-[node name="DocumentShape" type="CollisionShape2D" parent="DocumentArea"]
-position = Vector2(424, 320)
-shape = SubResource("RectangleShape2D_7e14k")
+[node name="LetterBinShape" type="CollisionShape2D" parent="LetterBin"]
+visible = false
+position = Vector2(6, 12)
+shape = SubResource("RectangleShape2D_x7tjf")
 
-[node name="Document-sprite" type="Sprite2D" parent="DocumentArea/DocumentShape"]
-position = Vector2(-1, 5)
+[node name="Document-sprite" type="Sprite2D" parent="LetterBin/LetterBinShape"]
+position = Vector2(-1, 2)
+texture = ExtResource("2_ydbeo")
+
+[node name="ReportBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("ReportBinShape")
+typeofDocument = 1
+
+[node name="ReportBinShape" type="CollisionShape2D" parent="ReportBin"]
+visible = false
+position = Vector2(32, 12)
+shape = SubResource("RectangleShape2D_63dax")
+
+[node name="Document-sprite" type="Sprite2D" parent="ReportBin/ReportBinShape"]
+texture = ExtResource("2_ydbeo")
+
+[node name="ContractBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("ContractBinShape")
+
+[node name="ContractBinShape" type="CollisionShape2D" parent="ContractBin"]
+visible = false
+position = Vector2(59, 12)
+shape = SubResource("RectangleShape2D_y8q3g")
+
+[node name="Document-sprite" type="Sprite2D" parent="ContractBin/ContractBinShape"]
 texture = ExtResource("2_ydbeo")

@@ -10,7 +10,7 @@ func _spawn_worker():
 	var instance = workerNode.instantiate()
 	
 	add_child(instance)
-	instance.position = self.position
+	instance.global_position = self.global_position
 
 func _randomize_time(first: int, second: int):
 	var randomNum = randf_range(first, second)

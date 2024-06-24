@@ -16,6 +16,7 @@ func _ready():
 	set_process_input(true)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(get_global_mouse_position())
 	if isDragging == true:
 		Drag()
 
@@ -42,4 +43,4 @@ func _input(event):
 			
 
 func Drag():
-	documentNode.position = get_viewport().get_mouse_position()
+	documentNode.global_position = get_global_mouse_position()
