@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dxphk0gh4y332"]
+[gd_scene load_steps=91 format=3 uid="uid://dxphk0gh4y332"]
 
 [ext_resource type="Texture2D" uid="uid://b3svktp5tdyv" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_1.png" id="1_vjvex"]
 [ext_resource type="Script" path="res://Scripts/keyboard.gd" id="2_3in2y"]
@@ -90,13 +90,22 @@
 [ext_resource type="Texture2D" uid="uid://dg1ikqack8iab" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_88.png" id="90_sd87c"]
 [ext_resource type="Texture2D" uid="uid://cn5dfulj0fbm8" path="res://Assets/MV Icons Keyboard/Individual Icons/keyboard_89.png" id="91_rmrei"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3xse"]
+size = Vector2(690, 238)
+
 [node name="Keyboard" type="Node2D"]
 position = Vector2(10, 172)
 script = ExtResource("2_3in2y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="KeyboardBackground" type="Sprite2D" parent="."]
 position = Vector2(488, 174)
 texture = ExtResource("2_46q64")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(490, 177)
+shape = SubResource("RectangleShape2D_v3xse")
 
 [node name="Key1" type="Sprite2D" parent="."]
 position = Vector2(212, 119)
@@ -492,3 +501,5 @@ texture = ExtResource("86_qb2hf")
 [node name="Key98" type="Sprite2D" parent="KeyShift"]
 position = Vector2(239, 229)
 texture = ExtResource("87_1mpq5")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
