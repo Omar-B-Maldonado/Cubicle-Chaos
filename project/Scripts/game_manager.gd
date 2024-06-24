@@ -48,9 +48,10 @@ func create_popup():
 	var popup_instance = popup_scene.instantiate()
 	popup_instance.set_manager(self)
 	
+	var screen_pos = computer.screen_area.global_position
 	# Set random position within defined range
-	var random_x = randf_range(computer.screen_area.position.x - 100, computer.screen_area.position.x + 100)
-	var random_y = randf_range(computer.screen_area.position.y - 100, computer.screen_area.position.y + 100)
+	var random_x = randf_range(screen_pos.x - 242, screen_pos.x -89) 
+	var random_y = randf_range(screen_pos.y - 116, screen_pos.y + 2)
 	popup_instance.position = Vector2(random_x, random_y)
 	
 	add_child(popup_instance)

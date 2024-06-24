@@ -62,7 +62,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel"]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0263158
+anchor_right = -0.0263158
 offset_left = 31.0
 offset_top = 44.0
 offset_right = 133.0
