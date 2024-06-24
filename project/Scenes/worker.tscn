@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://br82nmhyaw4yq"]
 
 [ext_resource type="Script" path="res://Scripts/worker.gd" id="1_wd0fc"]
-[ext_resource type="Texture2D" uid="uid://cg2by2cmnihn5" path="res://Images/worker.png" id="2_a4l7b"]
+[ext_resource type="Texture2D" uid="uid://ly304660g6y8" path="res://Images/pixellated_office_worker.png" id="2_xcqnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_embjc"]
 size = Vector2(60.25, 115)
@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_embjc")
 
 [node name="WorkerSprite" type="Sprite2D" parent="WorkerArea/WorkerShape"]
 scale = Vector2(0.149071, 0.149071)
-texture = ExtResource("2_a4l7b")
+texture = ExtResource("2_xcqnq")
 
 [node name="Label" type="Label" parent="WorkerArea"]
 offset_left = -74.0
