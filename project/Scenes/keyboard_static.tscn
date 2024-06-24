@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp6herso5l1j"]
+
+[ext_resource type="Texture2D" uid="uid://fs2bcluwla6a" path="res://Images/keyboard_static.png" id="1_c6j8v"]
+[ext_resource type="Script" path="res://Scripts/keyboard_static.gd" id="1_wmvr4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_winko"]
+size = Vector2(419, 38)
+
+[node name="KeyboardStatic" type="Node2D"]
+script = ExtResource("1_wmvr4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c6j8v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_winko")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

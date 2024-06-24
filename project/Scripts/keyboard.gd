@@ -1,4 +1,6 @@
 extends Node2D
+@onready var collision_shape_2d = $Area2D/CollisionShape2D
+@onready var keyboard_static = %KeyboardStatic
 
 # Dictionary to map key names to their corresponding game object nodes
 var key_to_object = {}
@@ -26,6 +28,7 @@ func _ready():
 	
 	# Ensure the node is set to receive input events
 	set_process_input(true)
+	self.visible = false
 
 func _input(event):
 	if event is InputEventKey and key_to_object.has(event.keycode):		
@@ -37,3 +40,11 @@ func _input(event):
 			
 		if event.is_released():
 			key_object.modulate = originalColor
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		self.visible = false
+		collision_shape_2d.disabled = true
+		keyboard_static.collision_shape_2d.disabled = false
+		

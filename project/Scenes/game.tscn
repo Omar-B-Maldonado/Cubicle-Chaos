@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8f35yelrpbuy"]
+[gd_scene load_steps=9 format=3 uid="uid://8f35yelrpbuy"]
 
 [ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/background.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
+[ext_resource type="PackedScene" uid="uid://bp6herso5l1j" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
 
 [node name="Game" type="Node2D"]
 
@@ -59,12 +60,17 @@ wait_time = 2.065
 position = Vector2(0, -7)
 zoom = Vector2(0.9, 0.9)
 
+[node name="KeyboardStatic" parent="." instance=ExtResource("8_v6ayf")]
+unique_name_in_owner = true
+position = Vector2(-6, 196)
+
 [node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
+unique_name_in_owner = true
 position = Vector2(-545, 50)
 
 [node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
 z_index = -1
-position = Vector2(307, 134)
+position = Vector2(-184, -142)
 
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
 [connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]

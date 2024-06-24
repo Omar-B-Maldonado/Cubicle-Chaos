@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ovo8qhgrljpw"]
 
-[ext_resource type="Texture2D" path="res://Images/paper folder.png" id="1_0m24w"]
+[ext_resource type="Texture2D" uid="uid://dh13xn0m6tc35" path="res://Images/paper folder.png" id="1_0m24w"]
 [ext_resource type="Script" path="res://Scripts/spawnWorkers.gd" id="1_oh2hj"]
 [ext_resource type="Script" path="res://Scripts/document.gd" id="1_qsyqm"]
 [ext_resource type="Texture2D" uid="uid://cqai77janou7g" path="res://Images/document-sprite.png" id="2_dc8wx"]
@@ -19,11 +19,8 @@ size = Vector2(26.5195, 196.328)
 [node name="Documents" type="Node2D" parent="."]
 
 [node name="PaperFolder" type="Sprite2D" parent="Documents"]
-
 texture_filter = 1
-
 position = Vector2(512, 301)
-
 texture = ExtResource("1_0m24w")
 
 [node name="LetterBin" type="Area2D" parent="Documents" node_paths=PackedStringArray("documentNode")]
@@ -33,7 +30,6 @@ documentNode = NodePath("LetterBinShape")
 typeofDocument = 2
 
 [node name="LetterBinShape" type="CollisionShape2D" parent="Documents/LetterBin"]
-visible = false
 position = Vector2(533, 171.328)
 shape = SubResource("RectangleShape2D_p1oxc")
 
@@ -48,7 +44,6 @@ documentNode = NodePath("ReportBinShape")
 typeofDocument = 1
 
 [node name="ReportBinShape" type="CollisionShape2D" parent="Documents/ReportBin"]
-visible = false
 position = Vector2(558, 171)
 shape = SubResource("RectangleShape2D_y5fyu")
 
@@ -61,7 +56,6 @@ script = ExtResource("1_qsyqm")
 documentNode = NodePath("ContractBinShape")
 
 [node name="ContractBinShape" type="CollisionShape2D" parent="Documents/ContractBin"]
-visible = false
 position = Vector2(584.74, 171.164)
 shape = SubResource("RectangleShape2D_qtdds")
 
