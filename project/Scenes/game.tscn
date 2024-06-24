@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8f35yelrpbuy"]
+[gd_scene load_steps=8 format=3 uid="uid://8f35yelrpbuy"]
 
 [ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/image.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_infar"]
 [ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
+[ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
 
 [node name="Game" type="Node2D"]
 
@@ -40,10 +41,10 @@ position = Vector2(-42, -40)
 
 [node name="Score" type="Label" parent="GameManager"]
 z_index = 505
-offset_left = 359.0
-offset_top = 269.0
-offset_right = 535.0
-offset_bottom = 316.0
+offset_left = -240.0
+offset_top = -67.0
+offset_right = -64.0
+offset_bottom = -20.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_infar")
 theme_override_font_sizes/font_size = 58
@@ -57,7 +58,11 @@ position = Vector2(0, -7)
 zoom = Vector2(0.9, 0.9)
 
 [node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
-position = Vector2(-515, 51)
+position = Vector2(-545, 50)
+
+[node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
+z_index = -1
+position = Vector2(312, 156)
 
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
 [connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]
