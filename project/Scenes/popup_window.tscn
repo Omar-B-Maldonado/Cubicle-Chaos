@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl8pgw2b5upcj"]
+[gd_scene load_steps=8 format=3 uid="uid://cl8pgw2b5upcj"]
 
 [ext_resource type="Script" path="res://Scripts/popup_window.gd" id="1_i4i6y"]
 [ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_ew68q"]
+[ext_resource type="AudioStream" uid="uid://detefngl0qxv8" path="res://Sounds/notification-sound-error-sound-effect-203788.mp3" id="3_te1rx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj4g1"]
 
@@ -92,5 +93,11 @@ offset_bottom = 116.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="error_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_te1rx")
+bus = &"SFX"
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Panel/XButton" to="." method="_on_x_button_pressed"]
+[connection signal="tree_entered" from="error_sound" to="." method="_on_error_sound_tree_entered"]

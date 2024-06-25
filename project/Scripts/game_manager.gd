@@ -1,6 +1,9 @@
 extends Node
 class_name GameManager
 
+@onready var game_timer = $GameTimer
+@onready var game_timer_label = %GameTimerLabel
+
 @onready var subtitle = $Subtitle
 @onready var phone    = $Phone
 @onready var voice    = %Voice
@@ -77,3 +80,17 @@ func _on_popup_timer_timeout():
 	var random_interval   = randf_range(1.0, 12.0)  # Random interval between 1 and 8 seconds
 	popup_timer.wait_time = random_interval
 	popup_timer.start()
+
+func _process(delta):
+	update_time_label()
+
+func update_time_label():
+	var time_left = game_timer.time_left
+	var minutes = int(time_left) / 60
+	var seconds = int(time_left) % 60
+	game_timer_label.text = str("%02d" % minutes) + ":" + str("%02d" % seconds)
+
+func _on_game_timer_timeout():
+	Global.score = points
+	print(Global.score)
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
