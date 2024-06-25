@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dk4dyy4qpy0wr"]
+[gd_scene load_steps=14 format=3 uid="uid://dk4dyy4qpy0wr"]
 
 [ext_resource type="Texture2D" uid="uid://dh13xn0m6tc35" path="res://Images/paper folder.png" id="1_hv7gf"]
 [ext_resource type="Script" path="res://Scripts/document.gd" id="1_o2otn"]
 [ext_resource type="Texture2D" uid="uid://bc4qg5ew1ydpq" path="res://Images/Red Paper.png" id="3_hykq2"]
 [ext_resource type="Texture2D" uid="uid://5068qp5wpose" path="res://Images/Blue Paper.png" id="4_46387"]
 [ext_resource type="Texture2D" uid="uid://2q4kywmgja2n" path="res://Images/Green Paper.png" id="5_ait41"]
+[ext_resource type="AudioStream" uid="uid://c7g45wfa88tni" path="res://Sounds/paper-collect-3-186600.mp3" id="6_yxrx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jels"]
 size = Vector2(84, 93)
@@ -147,3 +148,8 @@ metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dmj5e")
+
+[node name="PaperGrabSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_yxrx6")
+bus = &"SFX"

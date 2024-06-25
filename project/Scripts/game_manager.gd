@@ -1,6 +1,8 @@
 extends Node
 class_name GameManager
 
+@onready var music = $Music
+
 @onready var game_timer = $GameTimer
 @onready var game_timer_label = %GameTimerLabel
 
@@ -15,7 +17,7 @@ var popup_scene     = load("res://Scenes/popup_window.tscn")
 var active_popups   = []
 var voice_trigger   = 0
 var current_answers = ""
-static var points          = 0
+static var points   = 0
 
 func _ready():
 	score = $Score

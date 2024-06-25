@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8f35yelrpbuy"]
+[gd_scene load_steps=12 format=3 uid="uid://8f35yelrpbuy"]
 
 [ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/background.png" id="1_44csg"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
+[ext_resource type="AudioStream" uid="uid://c44lsnb0xik4m" path="res://Sounds/gimme-gimme-jazz.mp3" id="7_valaj"]
 [ext_resource type="PackedScene" uid="uid://dk4dyy4qpy0wr" path="res://Scenes/document.tscn" id="8_f6c02"]
-[ext_resource type="PackedScene" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
 [ext_resource type="Texture2D" uid="uid://ceu7mtsr5qwbi" path="res://Images/background_top.png" id="10_f7r2y"]
 
 [node name="Game" type="Node2D"]
@@ -70,6 +71,11 @@ text = "Score: 0"
 
 [node name="PopupTimer" type="Timer" parent="GameManager"]
 wait_time = 2.065
+
+[node name="Music" type="AudioStreamPlayer2D" parent="GameManager"]
+stream = ExtResource("7_valaj")
+autoplay = true
+bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -7)

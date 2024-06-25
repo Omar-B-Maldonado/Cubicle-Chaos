@@ -1,5 +1,6 @@
 extends Area2D
 class_name DocumentArea
+@onready var paper_grab_sound = %PaperGrabSound
 
 enum Document {CONTRACT, REPORT, LETTER}
 
@@ -37,6 +38,7 @@ func _input(event):
 			documentNode.visible = true
 			documentNode.disabled = false
 			isDragging = true
+			paper_grab_sound.play()
 			print("LMB clicked")
 		elif event.is_released():
 			isDragging = false
