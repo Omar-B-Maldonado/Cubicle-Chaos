@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=3 uid="uid://dk4dyy4qpy0wr"]
+
+[ext_resource type="Texture2D" uid="uid://dh13xn0m6tc35" path="res://Images/paper folder.png" id="1_hv7gf"]
+[ext_resource type="Script" path="res://Scripts/document.gd" id="1_o2otn"]
+[ext_resource type="Texture2D" uid="uid://bc4qg5ew1ydpq" path="res://Images/Red Paper.png" id="3_hykq2"]
+[ext_resource type="Texture2D" uid="uid://5068qp5wpose" path="res://Images/Blue Paper.png" id="4_46387"]
+[ext_resource type="Texture2D" uid="uid://2q4kywmgja2n" path="res://Images/Green Paper.png" id="5_ait41"]
+[ext_resource type="AudioStream" uid="uid://c7g45wfa88tni" path="res://Sounds/paper-collect-3-186600.mp3" id="6_yxrx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jels"]
+size = Vector2(84, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7tjf"]
+size = Vector2(26, 196.656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvj1n"]
+size = Vector2(86, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63dax"]
+size = Vector2(23.0391, 196.656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20j62"]
+size = Vector2(86, 93.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8q3g"]
+size = Vector2(26.5195, 196.328)
+
+[sub_resource type="Environment" id="Environment_dmj5e"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 4
+
+[node name="Document" type="Node2D"]
+
+[node name="PaperFolder" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.00382, 1.00022)
+texture = ExtResource("1_hv7gf")
+
+[node name="LetterBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("LetterShape")
+typeofDocument = 2
+glow = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="LetterBin"]
+visible = false
+modulate = Color(5.405, 3.783, 0, 1)
+offset_left = -6.0
+offset_top = -86.0
+offset_right = 18.0
+offset_bottom = 111.0
+color = Color(0.960784, 0.588235, 0.333333, 0.0156863)
+metadata/_edit_use_anchors_ = true
+
+[node name="LetterShape" type="CollisionShape2D" parent="LetterBin"]
+visible = false
+position = Vector2(-130, -41)
+shape = SubResource("RectangleShape2D_2jels")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="LetterBin/LetterShape"]
+z_index = 5
+texture_filter = 1
+position = Vector2(-1, 0.500001)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("3_hykq2")
+metadata/_edit_lock_ = true
+
+[node name="LetterBinShape" type="CollisionShape2D" parent="LetterBin"]
+visible = false
+position = Vector2(6, 12)
+shape = SubResource("RectangleShape2D_x7tjf")
+metadata/_edit_lock_ = true
+
+[node name="ReportBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("ReportShape")
+typeofDocument = 1
+glow = NodePath("ColorRect2")
+
+[node name="ColorRect2" type="ColorRect" parent="ReportBin"]
+visible = false
+modulate = Color(0.219608, 0.627451, 0.631373, 1)
+offset_left = 20.0
+offset_top = -87.0
+offset_right = 44.0
+offset_bottom = 110.0
+color = Color(0, 0, 4.90588, 0.313726)
+metadata/_edit_use_anchors_ = true
+
+[node name="ReportShape" type="CollisionShape2D" parent="ReportBin"]
+visible = false
+position = Vector2(-128, 50)
+shape = SubResource("RectangleShape2D_vvj1n")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="ReportBin/ReportShape"]
+z_index = 5
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("4_46387")
+metadata/_edit_lock_ = true
+
+[node name="ReportBinShape" type="CollisionShape2D" parent="ReportBin"]
+visible = false
+position = Vector2(32, 12)
+shape = SubResource("RectangleShape2D_63dax")
+metadata/_edit_lock_ = true
+
+[node name="ContractBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
+z_index = 4
+script = ExtResource("1_o2otn")
+documentNode = NodePath("ContractShape")
+glow = NodePath("ColorRect3")
+
+[node name="ColorRect3" type="ColorRect" parent="ContractBin"]
+visible = false
+modulate = Color(0.518, 2.703, 0.506, 1)
+offset_left = 46.0
+offset_top = -88.0
+offset_right = 70.0
+offset_bottom = 109.0
+color = Color(1, 1, 1, 0.027451)
+metadata/_edit_use_anchors_ = true
+
+[node name="ContractShape" type="CollisionShape2D" parent="ContractBin"]
+visible = false
+position = Vector2(-173, 102)
+shape = SubResource("RectangleShape2D_20j62")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="ContractBin/ContractShape"]
+z_index = 5
+texture_filter = 1
+position = Vector2(0, 0.250004)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("5_ait41")
+metadata/_edit_lock_ = true
+
+[node name="ContractBinShape" type="CollisionShape2D" parent="ContractBin"]
+visible = false
+position = Vector2(59, 12)
+shape = SubResource("RectangleShape2D_y8q3g")
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dmj5e")
+
+[node name="PaperGrabSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_yxrx6")
+bus = &"SFX"

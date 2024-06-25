@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://di2h0c7y4sp2"]
+
+[ext_resource type="Script" path="res://Scripts/phone.gd" id="1_5yodq"]
+[ext_resource type="Texture2D" uid="uid://dt6hphx8a0cev" path="res://Images/phoneanswered.png" id="2_w58e7"]
+[ext_resource type="AudioStream" uid="uid://d0612be77jwv5" path="res://Sounds/old-phone-ringtone-poland.mp3" id="3_47k10"]
+[ext_resource type="AudioStream" uid="uid://bnlt5pejsl6r6" path="res://Sounds/phone-pick-up.mp3" id="4_rtwn2"]
+[ext_resource type="AudioStream" uid="uid://dy457m24j85bt" path="res://Sounds/phone-hang-up.mp3" id="5_qexr3"]
+[ext_resource type="AudioStream" uid="uid://bmjybq0cugtxm" path="res://Sounds/Voice3.wav" id="6_kbtp0"]
+[ext_resource type="AudioStream" uid="uid://bp5pq763cq0sp" path="res://Sounds/hang_up_tone.mp3" id="7_62b6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pt3"]
+size = Vector2(130.399, 93.5277)
+
+[node name="Phone" type="Node2D"]
+script = ExtResource("1_5yodq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9, -28)
+scale = Vector2(0.601232, 0.671272)
+texture = ExtResource("2_w58e7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.9
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.5, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(48.6894, -0.704582)
+rotation = -0.0872437
+shape = SubResource("RectangleShape2D_r4pt3")
+
+[node name="Ringing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_47k10")
+bus = &"SFX"
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rtwn2")
+bus = &"SFX"
+
+[node name="HangUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qexr3")
+bus = &"SFX"
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kbtp0")
+bus = &"SFX"
+
+[node name="HangUpTone" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_62b6w")
+bus = &"HangUpTone"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

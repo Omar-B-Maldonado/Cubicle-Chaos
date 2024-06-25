@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://8f35yelrpbuy"]
+
+[ext_resource type="Texture2D" uid="uid://0p4vni2l4qaa" path="res://Images/background.png" id="1_44csg"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_cgfok"]
+[ext_resource type="PackedScene" uid="uid://di2h0c7y4sp2" path="res://Scenes/phone.tscn" id="1_jqgf3"]
+[ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="2_infar"]
+[ext_resource type="PackedScene" uid="uid://dxphk0gh4y332" path="res://Scenes/Keyboard.tscn" id="4_ibdtb"]
+[ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
+[ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
+[ext_resource type="AudioStream" uid="uid://c44lsnb0xik4m" path="res://Sounds/gimme-gimme-jazz.mp3" id="7_valaj"]
+[ext_resource type="PackedScene" uid="uid://dk4dyy4qpy0wr" path="res://Scenes/document.tscn" id="8_f6c02"]
+[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="Texture2D" uid="uid://ceu7mtsr5qwbi" path="res://Images/background_top.png" id="10_f7r2y"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1, 98)
+scale = Vector2(1.00156, 1)
+texture = ExtResource("1_44csg")
+
+[node name="BackgroundTop" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(0, -262)
+scale = Vector2(1, 1.00239)
+texture = ExtResource("10_f7r2y")
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_cgfok")
+
+[node name="GameTimer" type="Timer" parent="GameManager"]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="Phone" parent="GameManager" instance=ExtResource("1_jqgf3")]
+texture_filter = 1
+position = Vector2(-615, 141)
+scale = Vector2(1.66459, 1.49874)
+
+[node name="Subtitle" type="Label" parent="GameManager"]
+texture_filter = 1
+offset_left = -617.0
+offset_top = -343.0
+offset_right = 222.0
+offset_bottom = -174.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_infar")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Computer" parent="GameManager" instance=ExtResource("5_2qwyh")]
+z_index = -1
+position = Vector2(-42, -40)
+
+[node name="Score" type="Label" parent="GameManager"]
+z_index = 505
+texture_filter = 1
+offset_left = -610.0
+offset_top = 267.0
+offset_right = -434.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_infar")
+theme_override_font_sizes/font_size = 58
+text = "Score: 0"
+
+[node name="PopupTimer" type="Timer" parent="GameManager"]
+wait_time = 2.065
+
+[node name="Music" type="AudioStreamPlayer2D" parent="GameManager"]
+stream = ExtResource("7_valaj")
+autoplay = true
+bus = &"Music"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -7)
+zoom = Vector2(0.9, 0.9)
+
+[node name="KeyboardStatic" parent="." instance=ExtResource("8_v6ayf")]
+unique_name_in_owner = true
+position = Vector2(-6, 196)
+
+[node name="Keyboard" parent="." instance=ExtResource("4_ibdtb")]
+unique_name_in_owner = true
+position = Vector2(-545, 50)
+
+[node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
+z_index = -1
+position = Vector2(445, -174)
+
+[node name="Document" parent="." instance=ExtResource("8_f6c02")]
+position = Vector2(453, 192)
+
+[node name="GameTimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 4096
+texture_filter = 1
+offset_left = 398.0
+offset_top = -153.0
+offset_right = 490.0
+offset_bottom = -104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_infar")
+theme_override_font_sizes/font_size = 61
+text = "0:00"
+
+[connection signal="timeout" from="GameManager/GameTimer" to="GameManager" method="_on_game_timer_timeout"]
+[connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
+[connection signal="timeout" from="GameManager/PopupTimer" to="GameManager" method="_on_popup_timer_timeout"]
