@@ -2,45 +2,59 @@
 
 [ext_resource type="Script" path="res://Scripts/worker.gd" id="1_wd0fc"]
 [ext_resource type="Texture2D" uid="uid://ly304660g6y8" path="res://Images/pixellated_office_worker.png" id="2_xcqnq"]
-[ext_resource type="Texture2D" uid="uid://bc4qg5ew1ydpq" path="res://Assets/RetroWindowsGUI/Red Paper.png" id="3_m1wxi"]
+[ext_resource type="FontFile" uid="uid://0wnspmv7qpwf" path="res://Fonts/monogram-extended.ttf" id="3_c8jsb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_embjc"]
-size = Vector2(60.25, 115)
+size = Vector2(36, 53.9773)
 
-[node name="Worker" type="Node2D" node_paths=PackedStringArray("workerSprite", "workerText")]
+[node name="Worker" type="Node2D" node_paths=PackedStringArray("workerSprite", "labelDocument")]
 z_index = -2
 z_as_relative = false
+scale = Vector2(2.2, 2.2)
 script = ExtResource("1_wd0fc")
-workerSprite = NodePath("WorkerArea/WorkerShape/WorkerSprite")
-workerText = NodePath("WorkerArea/Label")
+workerSprite = NodePath("WorkerArea/WorkerSprite")
+labelDocument = NodePath("WorkerArea/LabelDocument")
 
 [node name="WorkerArea" type="Area2D" parent="."]
 
-[node name="WorkerShape" type="CollisionShape2D" parent="WorkerArea"]
-shape = SubResource("RectangleShape2D_embjc")
-
-[node name="WorkerSprite" type="Sprite2D" parent="WorkerArea/WorkerShape"]
+[node name="WorkerSprite" type="Sprite2D" parent="WorkerArea"]
 scale = Vector2(0.149071, 0.149071)
 texture = ExtResource("2_xcqnq")
 
-[node name="Label" type="Label" parent="WorkerArea"]
-offset_left = -74.0
-offset_top = -86.0
-offset_right = -8.0
-offset_bottom = -63.0
+[node name="WorkerShape" type="CollisionShape2D" parent="WorkerArea"]
+position = Vector2(-0.454545, -26.9886)
+shape = SubResource("RectangleShape2D_embjc")
+
+[node name="LabelRequest" type="Label" parent="WorkerArea"]
+texture_filter = 1
+offset_left = -28.6364
+offset_top = -69.5454
+offset_right = 37.3636
+offset_bottom = -46.5454
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("3_c8jsb")
 text = "I need a "
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelDocument" type="Label" parent="WorkerArea"]
+texture_filter = 1
+offset_left = -32.7273
+offset_top = -57.7273
+offset_right = 33.2727
+offset_bottom = -34.7273
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("3_c8jsb")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="WorkerTimer" type="Timer" parent="WorkerArea"]
 wait_time = 5.0
 autostart = true
-
-[node name="RedPaper" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(88, 27)
-scale = Vector2(1.61579, 1.61579)
-texture = ExtResource("3_m1wxi")
 
 [connection signal="area_entered" from="WorkerArea" to="." method="_on_worker_area_area_entered"]
 [connection signal="timeout" from="WorkerArea/WorkerTimer" to="." method="_on_worker_timer_timeout"]

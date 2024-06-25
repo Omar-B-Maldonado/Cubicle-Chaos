@@ -35,12 +35,14 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == 1:
 		if isAreaActive == true and event.is_pressed():
 			documentNode.visible = true
+			documentNode.disabled = false
 			isDragging = true
 			print("LMB clicked")
 		elif event.is_released():
 			isDragging = false
 			documentNode.position = originalPosition
 			documentNode.visible = false
+			documentNode.disabled = true
 			print("LMB Released")
 			
 

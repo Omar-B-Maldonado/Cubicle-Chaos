@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bipstddw3iioq" path="res://Scenes/computer.tscn" id="5_2qwyh"]
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
 [ext_resource type="PackedScene" uid="uid://dk4dyy4qpy0wr" path="res://Scenes/document.tscn" id="8_f6c02"]
-[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="PackedScene" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
 [ext_resource type="Texture2D" uid="uid://ceu7mtsr5qwbi" path="res://Images/background_top.png" id="10_f7r2y"]
 
 [node name="Game" type="Node2D"]

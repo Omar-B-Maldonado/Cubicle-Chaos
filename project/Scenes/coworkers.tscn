@@ -5,7 +5,7 @@
 [node name="Coworkers" type="Node2D"]
 
 [node name="SpawnArea1" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
-position = Vector2(-101, 0)
+position = Vector2(-130, 0)
 script = ExtResource("1_oh2hj")
 spawnTimer = NodePath("SpawnWorkerTimer")
 
@@ -14,7 +14,6 @@ wait_time = 3.0
 one_shot = true
 
 [node name="SpawnArea2" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
-position = Vector2(-1, 0)
 script = ExtResource("1_oh2hj")
 spawnTimer = NodePath("SpawnWorkerTimer")
 
@@ -23,7 +22,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="SpawnArea3" type="Node2D" parent="." node_paths=PackedStringArray("spawnTimer")]
-position = Vector2(99, 0)
+position = Vector2(130, 0)
 script = ExtResource("1_oh2hj")
 spawnTimer = NodePath("SpawnWorkerTimer")
 

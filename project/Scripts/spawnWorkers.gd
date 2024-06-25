@@ -3,7 +3,7 @@ extends Node
 @export var spawnTimer: Timer
 
 func _ready():
-	_randomize_time(4, 10)
+	_randomize_time(5, 20)
 	
 func _spawn_worker():
 	var workerNode = preload("res://Scenes/worker.tscn")
@@ -20,4 +20,4 @@ func _on_spawn_worker_timer_timeout():
 	_spawn_worker()
 
 func _on_child_exiting_tree(node):
-	_randomize_time(0, 3)
+	_randomize_time(10, 20)

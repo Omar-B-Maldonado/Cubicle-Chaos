@@ -1,14 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk4dyy4qpy0wr"]
+[gd_scene load_steps=13 format=3 uid="uid://dk4dyy4qpy0wr"]
 
 [ext_resource type="Texture2D" uid="uid://dh13xn0m6tc35" path="res://Images/paper folder.png" id="1_hv7gf"]
 [ext_resource type="Script" path="res://Scripts/document.gd" id="1_o2otn"]
-[ext_resource type="Texture2D" uid="uid://cqai77janou7g" path="res://Images/document-sprite.png" id="2_ydbeo"]
+[ext_resource type="Texture2D" uid="uid://bc4qg5ew1ydpq" path="res://Images/Red Paper.png" id="3_hykq2"]
+[ext_resource type="Texture2D" uid="uid://5068qp5wpose" path="res://Images/Blue Paper.png" id="4_46387"]
+[ext_resource type="Texture2D" uid="uid://2q4kywmgja2n" path="res://Images/Green Paper.png" id="5_ait41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jels"]
+size = Vector2(84, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7tjf"]
 size = Vector2(26, 196.656)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvj1n"]
+size = Vector2(86, 92)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63dax"]
 size = Vector2(23.0391, 196.656)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20j62"]
+size = Vector2(86, 93.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8q3g"]
 size = Vector2(26.5195, 196.328)
@@ -22,12 +33,13 @@ glow_blend_mode = 4
 
 [node name="PaperFolder" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(1.00382, 1.00022)
 texture = ExtResource("1_hv7gf")
 
 [node name="LetterBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
 z_index = 4
 script = ExtResource("1_o2otn")
-documentNode = NodePath("LetterBinShape")
+documentNode = NodePath("LetterShape")
 typeofDocument = 2
 glow = NodePath("ColorRect")
 
@@ -41,19 +53,30 @@ offset_bottom = 111.0
 color = Color(0.960784, 0.588235, 0.333333, 0.027451)
 metadata/_edit_use_anchors_ = true
 
+[node name="LetterShape" type="CollisionShape2D" parent="LetterBin"]
+visible = false
+position = Vector2(-130, -41)
+shape = SubResource("RectangleShape2D_2jels")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="LetterBin/LetterShape"]
+z_index = 5
+texture_filter = 1
+position = Vector2(-1, 0.500001)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("3_hykq2")
+metadata/_edit_lock_ = true
+
 [node name="LetterBinShape" type="CollisionShape2D" parent="LetterBin"]
 visible = false
 position = Vector2(6, 12)
 shape = SubResource("RectangleShape2D_x7tjf")
-
-[node name="Document-sprite" type="Sprite2D" parent="LetterBin/LetterBinShape"]
-position = Vector2(-1, 2)
-texture = ExtResource("2_ydbeo")
+metadata/_edit_lock_ = true
 
 [node name="ReportBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
 z_index = 4
 script = ExtResource("1_o2otn")
-documentNode = NodePath("ReportBinShape")
+documentNode = NodePath("ReportShape")
 typeofDocument = 1
 glow = NodePath("ColorRect2")
 
@@ -67,18 +90,29 @@ offset_bottom = 110.0
 color = Color(0, 0, 6.68235, 0.027451)
 metadata/_edit_use_anchors_ = true
 
+[node name="ReportShape" type="CollisionShape2D" parent="ReportBin"]
+visible = false
+position = Vector2(-128, 50)
+shape = SubResource("RectangleShape2D_vvj1n")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="ReportBin/ReportShape"]
+z_index = 5
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("4_46387")
+metadata/_edit_lock_ = true
+
 [node name="ReportBinShape" type="CollisionShape2D" parent="ReportBin"]
 visible = false
 position = Vector2(32, 12)
 shape = SubResource("RectangleShape2D_63dax")
-
-[node name="Document-sprite" type="Sprite2D" parent="ReportBin/ReportBinShape"]
-texture = ExtResource("2_ydbeo")
+metadata/_edit_lock_ = true
 
 [node name="ContractBin" type="Area2D" parent="." node_paths=PackedStringArray("documentNode", "glow")]
 z_index = 4
 script = ExtResource("1_o2otn")
-documentNode = NodePath("ContractBinShape")
+documentNode = NodePath("ContractShape")
 glow = NodePath("ColorRect3")
 
 [node name="ColorRect3" type="ColorRect" parent="ContractBin"]
@@ -91,13 +125,25 @@ offset_bottom = 109.0
 color = Color(1, 1, 1, 0.027451)
 metadata/_edit_use_anchors_ = true
 
+[node name="ContractShape" type="CollisionShape2D" parent="ContractBin"]
+visible = false
+position = Vector2(-173, 102)
+shape = SubResource("RectangleShape2D_20j62")
+disabled = true
+
+[node name="Document-sprite" type="Sprite2D" parent="ContractBin/ContractShape"]
+z_index = 5
+texture_filter = 1
+position = Vector2(0, 0.250004)
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("5_ait41")
+metadata/_edit_lock_ = true
+
 [node name="ContractBinShape" type="CollisionShape2D" parent="ContractBin"]
 visible = false
 position = Vector2(59, 12)
 shape = SubResource("RectangleShape2D_y8q3g")
-
-[node name="Document-sprite" type="Sprite2D" parent="ContractBin/ContractBinShape"]
-texture = ExtResource("2_ydbeo")
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dmj5e")
