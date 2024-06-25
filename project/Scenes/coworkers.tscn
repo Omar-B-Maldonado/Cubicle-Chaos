@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ovo8qhgrljpw"]
+[gd_scene load_steps=3 format=3 uid="uid://ovo8qhgrljpw"]
 
 [ext_resource type="Script" path="res://Scripts/spawnWorkers.gd" id="1_oh2hj"]
+[ext_resource type="AudioStream" uid="uid://c8ptsbf6w2x8" path="res://Sounds/worker_pop.mp3" id="2_sculc"]
 
 [node name="Coworkers" type="Node2D"]
 
@@ -29,6 +30,11 @@ spawnTimer = NodePath("SpawnWorkerTimer")
 [node name="SpawnWorkerTimer" type="Timer" parent="SpawnArea3"]
 wait_time = 3.0
 one_shot = true
+
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_sculc")
+bus = &"SFX"
 
 [connection signal="child_exiting_tree" from="SpawnArea1" to="SpawnArea1" method="_on_child_exiting_tree"]
 [connection signal="timeout" from="SpawnArea1/SpawnWorkerTimer" to="SpawnArea1" method="_on_spawn_worker_timer_timeout"]

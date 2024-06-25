@@ -1,4 +1,5 @@
 extends Node
+@onready var pop_sound = %PopSound
 
 @export var spawnTimer: Timer
 
@@ -18,6 +19,7 @@ func _randomize_time(first: int, second: int):
 
 func _on_spawn_worker_timer_timeout():
 	_spawn_worker()
+	pop_sound.play()
 
 func _on_child_exiting_tree(node):
 	_randomize_time(10, 20)
