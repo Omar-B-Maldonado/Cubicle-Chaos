@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ovo8qhgrljpw" path="res://Scenes/coworkers.tscn" id="7_scpmf"]
 [ext_resource type="AudioStream" uid="uid://c44lsnb0xik4m" path="res://Sounds/gimme-gimme-jazz.mp3" id="7_valaj"]
 [ext_resource type="PackedScene" uid="uid://dk4dyy4qpy0wr" path="res://Scenes/document.tscn" id="8_f6c02"]
-[ext_resource type="PackedScene" uid="uid://caxqckkwdj66i" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
+[ext_resource type="PackedScene" path="res://Scenes/keyboard_static.tscn" id="8_v6ayf"]
 [ext_resource type="Texture2D" uid="uid://ceu7mtsr5qwbi" path="res://Images/background_top.png" id="10_f7r2y"]
 
 [node name="Game" type="Node2D"]
@@ -52,6 +52,7 @@ theme_override_fonts/font = ExtResource("2_infar")
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Computer" parent="GameManager" instance=ExtResource("5_2qwyh")]
 z_index = -1
@@ -68,6 +69,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_infar")
 theme_override_font_sizes/font_size = 58
 text = "Score: 0"
+metadata/_edit_use_anchors_ = true
 
 [node name="PopupTimer" type="Timer" parent="GameManager"]
 wait_time = 2.065
@@ -109,6 +111,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_infar")
 theme_override_font_sizes/font_size = 61
 text = "0:00"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="GameManager/GameTimer" to="GameManager" method="_on_game_timer_timeout"]
 [connection signal="tree_exited" from="GameManager/Score" to="GameManager" method="_on_score_tree_exited"]
