@@ -85,7 +85,7 @@ position = Vector2(-545, 50)
 
 [node name="Coworkers" parent="." instance=ExtResource("7_scpmf")]
 z_index = -1
-position = Vector2(412, -174)
+position = Vector2(445, -174)
 
 [node name="Document" parent="." instance=ExtResource("8_f6c02")]
 position = Vector2(453, 192)

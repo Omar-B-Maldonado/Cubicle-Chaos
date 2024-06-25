@@ -45,12 +45,12 @@ glow = NodePath("ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="LetterBin"]
 visible = false
-self_modulate = Color(56.216, 4.324, 0, 1)
+modulate = Color(5.405, 3.783, 0, 1)
 offset_left = -6.0
 offset_top = -86.0
 offset_right = 18.0
 offset_bottom = 111.0
-color = Color(0.960784, 0.588235, 0.333333, 0.027451)
+color = Color(0.960784, 0.588235, 0.333333, 0.0156863)
 metadata/_edit_use_anchors_ = true
 
 [node name="LetterShape" type="CollisionShape2D" parent="LetterBin"]
@@ -82,12 +82,12 @@ glow = NodePath("ColorRect2")
 
 [node name="ColorRect2" type="ColorRect" parent="ReportBin"]
 visible = false
-modulate = Color(0.219608, 0.592157, 0.631373, 1)
+modulate = Color(0.219608, 0.627451, 0.631373, 1)
 offset_left = 20.0
 offset_top = -87.0
 offset_right = 44.0
 offset_bottom = 110.0
-color = Color(0, 0, 6.68235, 0.027451)
+color = Color(0, 0, 4.90588, 0.313726)
 metadata/_edit_use_anchors_ = true
 
 [node name="ReportShape" type="CollisionShape2D" parent="ReportBin"]

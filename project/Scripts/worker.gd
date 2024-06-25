@@ -34,9 +34,9 @@ func _on_worker_area_area_entered(area):
 func _assign_label_color():
 	match typeofDocument:
 		DocumentArea.Document.LETTER:
-			labelDocument.modulate = Color.RED
+			labelDocument.modulate = Color.ORANGE_RED
 		DocumentArea.Document.REPORT:
-			labelDocument.modulate = Color.BLUE
+			labelDocument.modulate = Color.DODGER_BLUE
 		DocumentArea.Document.CONTRACT:
 			labelDocument.modulate = Color.GREEN
 		
