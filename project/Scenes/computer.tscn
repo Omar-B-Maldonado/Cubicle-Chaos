@@ -27,17 +27,17 @@ position = Vector2(20, 9)
 script = ExtResource("1_n58x2")
 
 [node name="BGColor" type="ColorRect" parent="."]
-offset_left = -238.0
-offset_top = -115.0
-offset_right = 248.0
+offset_left = -241.0
+offset_top = -117.0
+offset_right = 250.0
 offset_bottom = 119.0
 color = Color(0.140447, 0.140447, 0.140447, 1)
 
 [node name="BlueTopBar" type="ColorRect" parent="."]
-offset_left = -238.0
-offset_top = -109.0
-offset_right = 15.0
-offset_bottom = -91.0
+offset_left = -236.0
+offset_top = -110.0
+offset_right = 17.0
+offset_bottom = -92.0
 color = Color(0.1716, 0.316767, 0.52, 1)
 
 [node name="BlueTopBar2" type="ColorRect" parent="."]
