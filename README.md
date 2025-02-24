@@ -12,4 +12,4 @@
 <a href="https://danielastacio.itch.io/cubicle-chaos"><img src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white" /></a>
 
 ### Screenshot
-> ![screenshot of our office-worker simulation](https://media.licdn.com/dms/image/D4E22AQHM5n5ZxeJRbw/feedshare-shrink_1280/0/1719357610596?e=1723075200&v=beta&t=vaEjchtFuYLRLK_iuvfGBQkWoznMzI010g3BnV40m7k)
+> ![cubicle_chaos_screenshot](https://github.com/user-attachments/assets/ea4d0bdf-3622-4e76-b4dd-70b029e28add)
